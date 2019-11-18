@@ -6,7 +6,7 @@ vegetables_producer = Producer.create!(
   last_name: "Mabelletomate",
   description: "Des légumes Bio, en biodynamie depuis 2015",
   address: "126, rue du Pontet 69250 Curis au Mont d'Or",
-  photo_url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fres.cloudinary.com%2Fwagon%2Fimage%2Fupload%2Fc_fill%2Cw_200%2Fv1550747756%2Fklvaudhtu5pw5qzneqiv.jpg&imgrefurl=https%3A%2F%2Fwww.lewagon.com%2Ffr%2Fteam&tbnid=KIUmkBHDj-6ROM&vet=12ahUKEwjFnoqLlPTlAhXH4YUKHQWCCzgQMygIegUIARDaAQ..i&docid=Hh3SDNRb2prD0M&w=200&h=300&q=kevin%20chavanne&ved=2ahUKEwjFnoqLlPTlAhXH4YUKHQWCCzgQMygIegUIARDaAQ"
+  photo_url: "https://res.cloudinary.com/wagon/image/upload/c_fill,h_520,w_390/v1550747756/klvaudhtu5pw5qzneqiv.jpg"
   )
 
 fruits_producer = Producer.create!(
