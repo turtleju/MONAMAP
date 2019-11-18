@@ -70,6 +70,7 @@ beef_producer = Producer.create!(
   last_name: "Meatball",
   description: "40 bovins (vaches, génisses et veaux) sur une surface de 40 hectares composés essentiellement de prairies",
   address: "950 chemin du mathias 69760 Limonest"
+)
 
 user1 = User.create!(
   first_name: "Lea",
