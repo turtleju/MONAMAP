@@ -84,7 +84,7 @@ user1 = User.create!(
   address: "Les Colverts, Birieux",
   email: "lea@example.com",
   password: "azerty",
-  photo_url: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiytebUjPTlAhXJAmMBHRVYC9sQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.grazia.fr%2Fnews-et-societe%2Fnews%2Ftemoignages-les-fermieres-du-ciel-a-new-york-715052&psig=AOvVaw2KXDGIRvKetwBWDb2iMPE-&ust=1574178063647582"
+  photo_url: "https://file1.grazia.fr/var/grazia/storage/images/media/images/societe/les-fermieres-a-ny/annie-novak-31-ans-fermiere-depuis-dix-ans.-greenpoint/12172924-1-fre-FR/Annie-Novak-31-ans-fermiere-depuis-dix-ans.-Greenpoint_width1024.jpg"
   )
 
 user2 = User.create!(
