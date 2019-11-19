@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_112223) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "content"
     t.index ["category_id"], name: "index_options_on_category_id"
   end
 

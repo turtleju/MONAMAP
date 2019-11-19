@@ -1,5 +1,7 @@
 puts 'SEED START'
 
+SubscriptionOption.destroy_all
+Subscription.destroy_all
 Option.destroy_all
 Category.destroy_all
 Producer.destroy_all
@@ -247,5 +249,15 @@ Option.create!(
   price:"30",
   category: beef_category
   )
+
+Subscription.create!(
+  user_id:User.first.id
+  )
+SubscriptionOption.create!(
+  subscription_id:Subscription.first.id,
+  option_id:Option.last.id,
+  ends_at:"31/12/2019"
+  )
+
 
 puts 'SEED OK'
