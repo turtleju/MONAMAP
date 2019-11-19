@@ -3,8 +3,6 @@ class SubscriptionsController < ApplicationController
     @categories = Category.all
     @options = Option.all
     @producers = Producer.all
-
-    raise
   end
 
   def create
