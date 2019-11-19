@@ -101,153 +101,191 @@ beef_category = Category.create!(name: "Boeuf BIO", producer: beef_producer)
 Option.create!(
   name:"panier DUO",
   price:"11",
-  category: vegetables_category
+  category: vegetables_category,
+  content: "Légumes d'hiver 500g de carottes,  4 poireaux, 1kg de pomme de terre, et 300g d'oignons "
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"17",
-  category: vegetables_category
+  category: vegetables_category,
+  content: " Légumes d'hiver 1kg de carotte,  10 poireaux, 1,5 kg de pomme de terre, et 500g d'oignons "
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"13",
-  category: vegetables_category
+  category: vegetables_category,
+  content: "Légumes d'hiver , 700g de carotte,  8 poireaux, 1 kg de pomme de terre, et 500g d'oignons "
   )
 Option.create!(
   name:"panier DUO",
   price:"6",
-  category: fruits_category
+  category: fruits_category,
+  content: "500g d'orange, 500g de pomme, 5 kiwis "
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"8",
-  category: fruits_category
+  category: fruits_category,
+  content: "1kg d'orange, 1kg de pomme, 10 kiwis"
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"7",
-  category: fruits_category
+  category: fruits_category,
+  content: "300g d'oranges, 300g de pommes, 4 kiwis"
   )
 Option.create!(
   name:"panier DUO",
   price:"4",
-  category: cheese_category
+  category: cheese_category,
+  content: "1 panier fromage (1 mont d'or pour deux, 1 buche de chèvre et 2 crottins) "
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"9",
-  category: cheese_category
+  category: cheese_category,
+  content: "2 paniers fromage (2  mont d'or de 500g , 2 buche de chèvre et 6 crottins)"
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"8",
-  category: cheese_category
+  category: cheese_category,
+  content: "1 panier fromage (2  mont d'or de 500g , 2 buche de chèvre et 6 crottins)"
   )
 Option.create!(
   name:"panier DUO",
   price:"5",
-  category: eggs_category
+  category: eggs_category,
+  content: "6 oeufs"
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"12",
-  category: eggs_category
+  category: eggs_category,
+  content: "24 oeufs"
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"10",
-  category: eggs_category
+  category: eggs_category,
+  content: "12 oeufs"
   )
 Option.create!(
   name:"panier DUO",
   price:"3",
-  category: bread_category
+  category: bread_category,
+  content: "1 Pain Délices (Raisin-amande, Abricot-noisettes, Figues-noix), 2 baguette traditions"
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"5",
-  category: bread_category
+  category: bread_category,
+  content: "1 pain de campagne (Farine semi complète),Pain aux graines (Tournelin ou Multigraines)"
+
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"5",
-  category: bread_category
+  category: bread_category,
+  content: "2 baguette traditions , 1 baguette à la farine de sarrazin "
   )
 
 Option.create!(
   name:"panier DUO",
   price:"3",
-  category: flour_category
+  category: flour_category,
+  content:"500g de farine des Monts-d’or"
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"4",
-  category: flour_category
+  category: flour_category,
+  content:"1kg de farine des Monts-d’or"
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"5",
-  category: flour_category
+  category: flour_category,
+  content:"500g de farine des Monts-d’or"
   )
 Option.create!(
   name:"panier DUO",
   price:"20",
-  category: chicken_category
+  category: chicken_category,
+  content:"1 Colis de découpe poulet (2 cuisses, 1 paquet de 2 filets)
+           Colis de volaille transformée (pouvant se composer selon fabrication de saucisses de volaille, saucisson à cuire, terrine, chair à farcir etc…)
+           Pintade"
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"35",
-  category: chicken_category
+  category: chicken_category,
+  content:"1 Colis de découpe poulet (2 cuisses, 1 paquet de 2 filets et 1 paquet de 2 ailes. Le tout sous vide.)
+           Colis de volaille transformée (pouvant se composer selon fabrication de saucisses de volaille, saucisson à cuire, terrine, chair à farcir etc…)
+           Pintade"
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"30",
-  category: chicken_category
+  category: chicken_category,
+  content:"1 Colis de découpe poulet (2 cuisses, 1 paquet de 2 filets et 1 paquet de 2 ailes. Le tout sous vide.)
+           Colis de volaille transformée (pouvant se composer selon fabrication de saucisses de volaille, saucisson à cuire, terrine, chair à farcir etc…)
+           Pintade"
   )
 Option.create!(
   name:"panier DUO",
   price:"25",
-  category: veal_category
+  category: veal_category,
+  content: " 4 cotelettes de veau, 2 escaloppes "
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"40",
-  category: veal_category
+  category: veal_category,
+  content:"6 cotelettes de veau, 4 escaloppes"
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"35",
-  category: veal_category
+  category: veal_category,
+  content:"6 cotelettes de veau, 4 escaloppes, 1 colis pour une blanquette (collier, épaule, flanchet, tendon, poitrine)"
   )
 Option.create!(
   name:"panier DUO",
   price:"15",
-  category: pork_category
+  category: pork_category,
+  content:"2 tranches de jambon, 2 échines de porc"
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"25",
-  category: pork_category
+  category: pork_category,
+  content:"6 tranches de jambon,4 échines de porc "
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"20",
-  category: pork_category
+  category: pork_category,
+  content:"4 tranches de jambon,4 échines de porc, 4 filets mignons "
   )
 Option.create!(
   name:"panier DUO",
   price:"25",
-  category: beef_category
+  category: beef_category,
+  content:"2 côtes de boeufs,2 tournedos "
   )
 Option.create!(
   name:"panier FAMILLE",
   price:"40",
-  category: beef_category
+  category: beef_category,
+  content:"4 côtes de boeufs, 4 tournedos , 2 entrecôtes "
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"30",
-  category: beef_category
+  category: beef_category,
+  content:"2 côtes de boeufs, 2 tournedos , 2 entrecôtes "
+
   )
 
 Subscription.create!(
