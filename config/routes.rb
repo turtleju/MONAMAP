@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard/show'
   devise_for :users
 
   resource :dashboard, only: :show
