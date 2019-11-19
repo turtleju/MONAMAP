@@ -87,6 +87,15 @@ user1 = User.create!(
   photo_url: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiytebUjPTlAhXJAmMBHRVYC9sQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.grazia.fr%2Fnews-et-societe%2Fnews%2Ftemoignages-les-fermieres-du-ciel-a-new-york-715052&psig=AOvVaw2KXDGIRvKetwBWDb2iMPE-&ust=1574178063647582"
   )
 
+user2 = User.create!(
+  first_name: "Maia",
+  last_name: "Garden",
+  address: "Saint-Cyr-au-Mont-d'Or",
+  email: "maia@example.com",
+  password: "azerty",
+  photo_url: "https://ichef.bbci.co.uk/news/660/cpsprodpb/2BCE/production/_108541211_maria4.jpg"
+  )
+
 vegetables_category = Category.create!(name: "légumes BIO", producer: vegetables_producer)
 fruits_category = Category.create!(name: "Fruits", producer: fruits_producer)
 cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer)
@@ -291,11 +300,33 @@ Option.create!(
 Subscription.create!(
   user_id:User.first.id
   )
+
+Subscription.create!(
+  user_id:User.last.id
+  )
+
 SubscriptionOption.create!(
   subscription_id:Subscription.first.id,
-  option_id:Option.last.id,
+  option_id:Option.all.last.id,
   ends_at:"31/12/2019"
   )
 
+SubscriptionOption.create!(
+  subscription_id:Subscription.first.id,
+  option_id:Option.all.sample.id,
+  ends_at:"31/12/2019"
+  )
+
+SubscriptionOption.create!(
+  subscription_id:Subscription.first.id,
+  option_id:Option.all.sample.id,
+  ends_at:"31/12/2019"
+  )
+
+SubscriptionOption.create!(
+  subscription_id:Subscription.first.id,
+  option_id:Option.all.sample.id,
+  ends_at:"31/12/2019"
+  )
 
 puts 'SEED OK'
