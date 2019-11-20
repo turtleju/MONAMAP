@@ -1,14 +1,17 @@
-.navbar-lewagon {
+.navbar-monamap {
   justify-content: space-between;
   background: white;
+  display: flex;
+
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-monamap .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-monamap .navbar-brand img {
   width: 40px;
+
 }
 
 .navbar {

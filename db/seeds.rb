@@ -105,16 +105,16 @@ user2 = User.create!(
   photo_url: "https://ichef.bbci.co.uk/news/660/cpsprodpb/2BCE/production/_108541211_maria4.jpg"
   )
 
-vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer)
-fruits_category = Category.create!(name: "Fruits", producer: fruits_producer)
-cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer)
-eggs_category = Category.create!(name: "Oeufs BIO", producer:  eggs_producer)
-bread_category = Category.create!(name: "Pain BIO", producer:  bread_producer)
-flour_category = Category.create!(name: "Farine BIO", producer:  flour_producer)
-chicken_category = Category.create!(name: "Volaille BIO", producer:  chicken_producer)
-veal_category = Category.create!(name: "Veau BIO", producer:  veal_producer)
-pork_category = Category.create!(name: "Porc BIO", producer: pork_producer)
-beef_category = Category.create!(name: "Boeuf BIO", producer: beef_producer)
+vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer, photo: "assets/images/vegetables.png")
+fruits_category = Category.create!(name: "Fruits", producer: fruits_producer, photo: "assets/images/apples.png")
+cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer, photo: "assets/images/cheese.png")
+eggs_category = Category.create!(name: "Oeufs BIO", producer:  eggs_producer, photo: "assets/images/egg.png")
+bread_category = Category.create!(name: "Pain BIO", producer:  bread_producer, photo: "assets/images/bread.png")
+flour_category = Category.create!(name: "Farine BIO", producer:  flour_producer, photo: "assets/images/flour.png")
+chicken_category = Category.create!(name: "Volaille BIO", producer:  chicken_producer, photo: "assets/images/chicken.png")
+veal_category = Category.create!(name: "Veau BIO", producer:  veal_producer, photo: "assets/images/veal.png")
+pork_category = Category.create!(name: "Porc BIO", producer: pork_producer, photo: "assets/images/pork.png")
+beef_category = Category.create!(name: "Boeuf BIO", producer: beef_producer, photo: "assets/images/meat.png")
 
 Option.create!(
   name:"panier DUO",
@@ -317,6 +317,18 @@ Subscription.create!(
 SubscriptionOption.create!(
   subscription_id:Subscription.first.id,
   option_id:Option.all.last.id,
+  ends_at:"31/12/2019"
+  )
+
+SubscriptionOption.create!(
+  subscription_id:Subscription.first.id,
+  option_id:Option.all.sample.id,
+  ends_at:"31/12/2019"
+  )
+
+SubscriptionOption.create!(
+  subscription_id:Subscription.first.id,
+  option_id:Option.all.sample.id,
   ends_at:"31/12/2019"
   )
 
