@@ -105,7 +105,7 @@ user2 = User.create!(
   photo_url: "https://ichef.bbci.co.uk/news/660/cpsprodpb/2BCE/production/_108541211_maria4.jpg"
   )
 
-vegetables_category = Category.create!(name: "légumes BIO", producer: vegetables_producer)
+vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer)
 fruits_category = Category.create!(name: "Fruits", producer: fruits_producer)
 cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer)
 eggs_category = Category.create!(name: "Oeufs BIO", producer:  eggs_producer)
