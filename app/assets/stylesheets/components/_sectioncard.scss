@@ -1,0 +1,54 @@
+.abonnement {
+  background-color: rgba(164, 160, 160, 0.15);
+  width: 340px;
+  height: 500px;
+  border-radius: 25px;
+  padding: 16px;
+  h3 {
+    margin-bottom: 0px;
+  }
+}
+
+.category-card {
+  border: 1px solid red;
+  width: 310px;
+  height: 60px;
+}
+
+.avatar-category {
+  background-image: asset-url("vegetables.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: $my-white;
+}
+
+.text-category {
+  height: 50px;
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.category-name {
+  font-family: $bold-font;
+  font-size: 24px;
+}
+
+.category-option {
+  font-family: $light-font;
+  font-size: 12px;
+}
