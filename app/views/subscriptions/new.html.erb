@@ -1,2 +1,18 @@
 <h1>Subscriptions#new</h1>
 <p>Find me in app/views/subscriptions/new.html.erb</p>
+
+<%= simple_form_for :category, url: subscriptions_path, method: 'post' do |f| %>
+    <div class="container">
+        <% @categories.each do |category| %>
+          <div class="category">
+            <h4><%= category.name %></h4>
+            <% category.options.each do |option| %>
+
+                <p><input type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> -> <%= option.price %></p>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+
+    <%= f.button :submit %>
+<% end %>

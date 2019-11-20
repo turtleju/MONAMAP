@@ -1,0 +1,5 @@
+<%= simple_form_for(@options) do |f| %>
+    <%= f.association :category %>
+    <%= f.association :name,   as: :check_boxes %>
+    <%= f.button :submit %>
+  <% end %>
