@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :subscriptions
   has_many :holidays
   has_many :absences
-  belongs_to :distribution
+  belongs_to :distribution, optional: true
 end
