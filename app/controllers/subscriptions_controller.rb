@@ -6,8 +6,8 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
+    raise
     @subscription = Subscription.create!(current_user.id)
-
     categories = params[:category]
     categories.each do |category, option|
       SubscriptionOption.create!(
