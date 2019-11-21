@@ -1,0 +1,65 @@
+h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.subscription-category-card {
+  // position: absolute;
+  height: auto;
+  left: 151px;
+  top: 139px;
+  margin-bottom: 16px;
+
+  background: #FFFFFF;
+  border: 3px solid #6AA1AD;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.wrap-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.script-selector {
+  display: none;
+}
+
+label {
+  padding: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 4px;
+  background-color: $my-dark-blue;
+  color: $my-white;
+  text-align: center;
+}
+
+label:hover {
+  background-color: $my-median-blue;
+}
+
+.select_category {
+  background-color: $my-dark-yellow;
+}
+
+.options-submit {
+  padding: 12px;
+  border-radius: 4px;
+  background-color: $my-red;
+  width: 300px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.options-submit:hover {
+  background-color: $my-orange;
+}

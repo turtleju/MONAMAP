@@ -6,7 +6,6 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    raise
     @subscription = Subscription.new(current_user.id)
     @options = [cat1_option1, cat2_option1, cat3_option2, cat5_option3]
     @options.each do |option|

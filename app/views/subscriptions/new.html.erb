@@ -1,18 +1,57 @@
-<h1>Subscriptions#new</h1>
-<p>Find me in app/views/subscriptions/new.html.erb</p>
+<h1>Choisissez vos produits et vos formules :</h1>
 
-<%= simple_form_for :category, url: subscriptions_path, method: 'post' do |f| %>
-    <div class="container">
+<div class="wrapper">
+  <%= simple_form_for :category, url: subscriptions_path, method: 'post' do |f| %>
+
         <% @categories.each do |category| %>
-          <div class="category">
-            <h4><%= category.name %></h4>
-            <% category.options.each do |option| %>
 
-                <p><input type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> -> <%= option.price %></p>
-            <% end %>
+          <div class="subscription-category-card">
+              <h4><%= category.name %></h4>
+                <p>Légumes issus de l'agriculture en Biodynamie d'Adrien, à Curis-au-Mont d'Or.</p>
+
+                <div class="wrap-categories">
+              <% category.options.each do |option| %>
+                  <label class="subscriptions_target">
+                    <input class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> : <%= option.price %> €
+                  </label>
+              <% end %>
+
           </div>
+                </div>
         <% end %>
-    </div>
+      <div class="options-submit">
+        <%= f.button :submit, value="Valider mon adhésion" %>
+      </div>
+  <% end %>
+</div>
 
-    <%= f.button :submit %>
-<% end %>
+<script type="text/javascript">
+
+  const inputs = document.querySelectorAll('.script-selector');
+  const labels = document.querySelectorAll('.subscriptions_target');
+
+    inputs.forEach(input =>
+      input.addEventListener("click", function firstStep(){
+        if(input.checked == true){
+          input.addEventListener("click", function secondStep() {
+            if(input.checked == false){
+
+              input.checked = true
+              console.log("coucou")
+              // document.querySelector('subscriptions_target').classList.add('select_category');
+            } else {
+              input.checked = false
+              console.log("slat")
+            }
+          });
+        }
+    }));
+
+    labels.forEach((label) => {
+      label.addEventListener("click", (event) => {
+        console.log(event)
+        event.currentTarget.classList.toggle("select_category");
+      })
+    });
+
+</script>
