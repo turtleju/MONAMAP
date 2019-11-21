@@ -1,11 +1,18 @@
 puts 'SEED START'
 
+Holiday.destroy_all
+Absence.destroy_all
 SubscriptionOption.destroy_all
 Subscription.destroy_all
 Option.destroy_all
 Category.destroy_all
 Producer.destroy_all
 User.destroy_all
+Distribution.destroy_all
+
+distribution = Distribution.create!(
+  date:"3/12/2019"
+  )
 
 vegetables_producer = Producer.create!(
   first_name: "David",
@@ -102,19 +109,40 @@ user2 = User.create!(
   address: "Saint-Cyr-au-Mont-d'Or",
   email: "maia@example.com",
   password: "azerty",
-  photo_url: "https://ichef.bbci.co.uk/news/660/cpsprodpb/2BCE/production/_108541211_maria4.jpg"
+  photo_url: "https://ichef.bbci.co.uk/news/660/cpsprodpb/2BCE/production/_108541211_maria4.jpg",
+  distribution_id: distribution.id
   )
 
-vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer)
-fruits_category = Category.create!(name: "Fruits", producer: fruits_producer)
-cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer)
-eggs_category = Category.create!(name: "Oeufs BIO", producer:  eggs_producer)
-bread_category = Category.create!(name: "Pain BIO", producer:  bread_producer)
-flour_category = Category.create!(name: "Farine BIO", producer:  flour_producer)
-chicken_category = Category.create!(name: "Volaille BIO", producer:  chicken_producer)
-veal_category = Category.create!(name: "Veau BIO", producer:  veal_producer)
-pork_category = Category.create!(name: "Porc BIO", producer: pork_producer)
-beef_category = Category.create!(name: "Boeuf BIO", producer: beef_producer)
+user3 = User.create!(
+  first_name: "Patrice",
+  last_name: "Lettu",
+  address: "Dardilly",
+  email: "patrice@example.com",
+  password: "azerty",
+  photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV5db8vVX3WO6xljRjryKbf9oZDf2f_IRE7HPN4vMf8TX3zkFkGQ&s",
+  distribution_id: distribution.id
+  )
+
+user4 = User.create!(
+  first_name: "Laure",
+  last_name: "Grasse",
+  address: "Anse",
+  email: "laure@example.com",
+  password: "azerty",
+  photo_url: "http://amap-moreuil.fr/wp-content/uploads/2015/02/Distribution2015-4-225x300.jpg",
+  distribution_id: distribution.id
+  )
+
+vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer, photo: "vegetables.png")
+fruits_category = Category.create!(name: "Fruits", producer: fruits_producer, photo: "apples.png")
+cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer, photo: "cheese.png")
+eggs_category = Category.create!(name: "Oeufs BIO", producer:  eggs_producer, photo: "egg.png")
+bread_category = Category.create!(name: "Pain BIO", producer:  bread_producer, photo: "bread.png")
+flour_category = Category.create!(name: "Farine BIO", producer:  flour_producer, photo: "flour.png")
+chicken_category = Category.create!(name: "Volaille BIO", producer:  chicken_producer, photo: "chicken.png")
+veal_category = Category.create!(name: "Veau BIO", producer:  veal_producer, photo: "veal.png")
+pork_category = Category.create!(name: "Porc BIO", producer: pork_producer, photo: "pork.png")
+beef_category = Category.create!(name: "Boeuf BIO", producer: beef_producer, photo: "meat.png")
 
 Option.create!(
   name:"panier DUO",
@@ -336,6 +364,48 @@ SubscriptionOption.create!(
   subscription_id:Subscription.first.id,
   option_id:Option.all.sample.id,
   ends_at:"31/12/2019"
+  )
+
+SubscriptionOption.create!(
+  subscription_id:Subscription.first.id,
+  option_id:Option.all.sample.id,
+  ends_at:"31/12/2019"
+  )
+
+SubscriptionOption.create!(
+  subscription_id:Subscription.first.id,
+  option_id:Option.all.sample.id,
+  ends_at:"31/12/2019"
+  )
+
+Holiday.create!(
+  begin: "23/12/19",
+  end: "27/12/19",
+  user_id:User.first.id
+  )
+
+Holiday.create!(
+  begin: "27/12/19",
+  end: "03/01/20",
+  user_id:User.last.id
+  )
+
+Absence.create!(
+  date: "21/01/20",
+  gift: true,
+  collect: false,
+  user_id:User.first.id
+  )
+
+Absence.create!(
+  date: "28/01/20",
+  gift: true,
+  collect: false,
+  user_id:User.last.id
+  )
+
+Distribution.create!(
+  date: "03/12/19"
   )
 
 puts 'SEED OK'
