@@ -123,17 +123,16 @@ user4 = User.create!(
   photo_url: "http://amap-moreuil.fr/wp-content/uploads/2015/02/Distribution2015-4-225x300.jpg"
   )
 
-
-vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer, photo: "assets/images/vegetables.png")
-fruits_category = Category.create!(name: "Fruits", producer: fruits_producer, photo: "assets/images/apples.png")
-cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer, photo: "assets/images/cheese.png")
-eggs_category = Category.create!(name: "Oeufs BIO", producer:  eggs_producer, photo: "assets/images/egg.png")
-bread_category = Category.create!(name: "Pain BIO", producer:  bread_producer, photo: "assets/images/bread.png")
-flour_category = Category.create!(name: "Farine BIO", producer:  flour_producer, photo: "assets/images/flour.png")
-chicken_category = Category.create!(name: "Volaille BIO", producer:  chicken_producer, photo: "assets/images/chicken.png")
-veal_category = Category.create!(name: "Veau BIO", producer:  veal_producer, photo: "assets/images/veal.png")
-pork_category = Category.create!(name: "Porc BIO", producer: pork_producer, photo: "assets/images/pork.png")
-beef_category = Category.create!(name: "Boeuf BIO", producer: beef_producer, photo: "assets/images/meat.png")
+vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer, photo: "vegetables.png")
+fruits_category = Category.create!(name: "Fruits", producer: fruits_producer, photo: "apples.png")
+cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer, photo: "cheese.png")
+eggs_category = Category.create!(name: "Oeufs BIO", producer:  eggs_producer, photo: "egg.png")
+bread_category = Category.create!(name: "Pain BIO", producer:  bread_producer, photo: "bread.png")
+flour_category = Category.create!(name: "Farine BIO", producer:  flour_producer, photo: "flour.png")
+chicken_category = Category.create!(name: "Volaille BIO", producer:  chicken_producer, photo: "chicken.png")
+veal_category = Category.create!(name: "Veau BIO", producer:  veal_producer, photo: "veal.png")
+pork_category = Category.create!(name: "Porc BIO", producer: pork_producer, photo: "pork.png")
+beef_category = Category.create!(name: "Boeuf BIO", producer: beef_producer, photo: "meat.png")
 
 Option.create!(
   name:"panier DUO",
