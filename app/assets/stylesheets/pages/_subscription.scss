@@ -29,9 +29,9 @@ h1 {
   white-space: nowrap;
 }
 
-.script-selector {
-  display: none;
-}
+// .script-selector {
+//   display: none;
+// }
 
 label {
   padding: 8px;
@@ -42,11 +42,19 @@ label {
   color: $my-white;
   text-align: center;
 }
-
+// test kevin
 label:hover {
   background-color: $my-median-blue;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
+input[type=radio]:checked + label {
+  background: red;
+}
+// fin test kevin
 .select_category {
   background-color: $my-dark-yellow;
 }

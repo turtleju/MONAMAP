@@ -3,8 +3,8 @@
 <section class="abonnement">
   <h3>Mon abonnement</h3>
   <p>Prend fin le 31 décembre 2019</p>
-  
-  <% @options.each do |option| %>
+
+  <% current_user.options.each do |option| %>
 
   <div class="category-card">
     <div class="inline">
