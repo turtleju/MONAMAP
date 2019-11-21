@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_142817) do
+ActiveRecord::Schema.define(version: 2019_11_21_150241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "absences", force: :cascade do |t|
+    t.string "date"
+    t.boolean "gift", default: false
+    t.boolean "collect", default: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_absences_on_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -22,6 +32,21 @@ ActiveRecord::Schema.define(version: 2019_11_20_142817) do
     t.datetime "updated_at", null: false
     t.string "photo"
     t.index ["producer_id"], name: "index_categories_on_producer_id"
+  end
+
+  create_table "distributions", force: :cascade do |t|
+    t.string "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "holidays", force: :cascade do |t|
+    t.string "begin"
+    t.string "end"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_holidays_on_user_id"
   end
 
   create_table "options", force: :cascade do |t|
@@ -75,13 +100,18 @@ ActiveRecord::Schema.define(version: 2019_11_20_142817) do
     t.string "last_name"
     t.string "address"
     t.string "photo_url"
+    t.bigint "distribution_id"
+    t.index ["distribution_id"], name: "index_users_on_distribution_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "absences", "users"
   add_foreign_key "categories", "producers"
+  add_foreign_key "holidays", "users"
   add_foreign_key "options", "categories"
   add_foreign_key "subscription_options", "options"
   add_foreign_key "subscription_options", "subscriptions"
   add_foreign_key "subscriptions", "users"
+  add_foreign_key "users", "distributions"
 end

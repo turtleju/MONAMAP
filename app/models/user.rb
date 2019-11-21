@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :subscriptions
+  has_many :holidays
+  has_many :absences
+  belongs_to :distribution
 end
