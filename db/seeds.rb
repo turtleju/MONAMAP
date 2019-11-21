@@ -105,6 +105,25 @@ user2 = User.create!(
   photo_url: "https://ichef.bbci.co.uk/news/660/cpsprodpb/2BCE/production/_108541211_maria4.jpg"
   )
 
+user3 = User.create!(
+  first_name: "Patrice",
+  last_name: "Lettu",
+  address: "Dardilly",
+  email: "patrice@example.com",
+  password: "azerty",
+  photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV5db8vVX3WO6xljRjryKbf9oZDf2f_IRE7HPN4vMf8TX3zkFkGQ&s"
+  )
+
+user4 = User.create!(
+  first_name: "Laure",
+  last_name: "Grasse",
+  address: "Anse",
+  email: "laure@example.com",
+  password: "azerty",
+  photo_url: "http://amap-moreuil.fr/wp-content/uploads/2015/02/Distribution2015-4-225x300.jpg"
+  )
+
+
 vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer, photo: "assets/images/vegetables.png")
 fruits_category = Category.create!(name: "Fruits", producer: fruits_producer, photo: "assets/images/apples.png")
 cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer, photo: "assets/images/cheese.png")
