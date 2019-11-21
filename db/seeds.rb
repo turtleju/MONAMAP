@@ -1,12 +1,14 @@
 puts 'SEED START'
 
-Distribution.destroy_all
+Holiday.destroy_all
+Absence.destroy_all
 SubscriptionOption.destroy_all
 Subscription.destroy_all
 Option.destroy_all
 Category.destroy_all
 Producer.destroy_all
 User.destroy_all
+Distribution.destroy_all
 
 distribution = Distribution.create!(
   date:"3/12/2019"
@@ -98,8 +100,7 @@ user1 = User.create!(
   address: "Les Colverts, Birieux",
   email: "lea@example.com",
   password: "azerty",
-  photo_url: "https://file1.grazia.fr/var/grazia/storage/images/media/images/societe/les-fermieres-a-ny/annie-novak-31-ans-fermiere-depuis-dix-ans.-greenpoint/12172924-1-fre-FR/Annie-Novak-31-ans-fermiere-depuis-dix-ans.-Greenpoint_width1024.jpg",
-  distribution_id: nil
+  photo_url: "https://file1.grazia.fr/var/grazia/storage/images/media/images/societe/les-fermieres-a-ny/annie-novak-31-ans-fermiere-depuis-dix-ans.-greenpoint/12172924-1-fre-FR/Annie-Novak-31-ans-fermiere-depuis-dix-ans.-Greenpoint_width1024.jpg"
   )
 
 user2 = User.create!(
@@ -378,33 +379,33 @@ SubscriptionOption.create!(
   )
 
 Holiday.create!(
-  begin: "23/12/19"
-  end: "27/12/19"
+  begin: "23/12/19",
+  end: "27/12/19",
   user_id:User.first.id
   )
 
 Holiday.create!(
-  begin: "27/12/19"
-  end: "03/01/20"
+  begin: "27/12/19",
+  end: "03/01/20",
   user_id:User.last.id
   )
 
 Absence.create!(
-  date: "21/01/20"
-  gift: true
-  collect: false
+  date: "21/01/20",
+  gift: true,
+  collect: false,
   user_id:User.first.id
   )
 
 Absence.create!(
-  date: "28/01/20"
-  gift: true
-  collect: false
+  date: "28/01/20",
+  gift: true,
+  collect: false,
   user_id:User.last.id
   )
 
 Distribution.create!(
-  dates: "03/12/19"
+  date: "03/12/19"
   )
 
 puts 'SEED OK'
