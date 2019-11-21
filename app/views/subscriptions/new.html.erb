@@ -11,9 +11,9 @@
 
                 <div class="wrap-categories">
               <% category.options.each do |option| %>
-                  <label class="subscriptions_target">
-                    <input class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> : <%= option.price %> €
-                  </label>
+                <!--   <label class="subscriptions_target"> -->
+                    <input id="<%= option.id %>" class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> : <%= option.price %> €
+                  <label for="<%= option.id %>"></label></label>
               <% end %>
 
           </div>
@@ -47,11 +47,11 @@
         }
     }));
 
-    labels.forEach((label) => {
-      label.addEventListener("click", (event) => {
-        console.log(event)
-        event.currentTarget.classList.toggle("select_category");
-      })
-    });
+    // labels.forEach((label) => {
+    //   label.addEventListener("click", (event) => {
+    //     console.log(event)
+    //     event.currentTarget.classList.toggle("select_category");
+    //   })
+    // });
 
 </script>
