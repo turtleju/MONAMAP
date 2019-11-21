@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
     @next_payment = "04-12-2019"
     @end = "31-12-2019"
 
-    @subscription = Subscription.find_by(user_id:6)
+    @subscription = Subscription.find_by(user_id:9)
     @subscription_options = SubscriptionOption.where(subscription_id: @subscription.id)
     @cart = []
     @options = []
