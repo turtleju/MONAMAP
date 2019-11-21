@@ -6,16 +6,14 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    raise
-    @subscription = Subscription.create!(current_user.id)
+    @subscription = Subscription.create(user: current_user)
     categories = params[:category]
     categories.each do |category, option|
       SubscriptionOption.create!(
         subscription_id: @subscription.id,
-        option_id: option.id
+        option_id: option.to_i
       )
     end
-    
     redirect_to dashboard_path
   end
 
