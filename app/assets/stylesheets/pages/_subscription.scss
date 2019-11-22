@@ -89,6 +89,12 @@ input[type=radio]:active + label {
   position: relative;
 }
 
+.sticky-card {
+  position: sticky;
+  z-index: 10;
+  top: 6px;
+}
+
 .total-card {
   height: auto;
   margin-bottom: 16px;
@@ -96,9 +102,9 @@ input[type=radio]:active + label {
   box-sizing: border-box;
   border-radius: 12px;
   padding: 8px;
-  position: sticky;
-  z-index: 10;
-  top: 6px;
+  // position: sticky;
+  // z-index: 10;
+  // top: 6px;
   box-shadow: 0px 2px 10px rgba(164, 160, 160, 0.17);
   border: 1px solid $my-dark-yellow;
 }
