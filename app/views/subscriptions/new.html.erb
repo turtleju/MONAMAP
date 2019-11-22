@@ -1,29 +1,52 @@
 <h1>Choisissez vos produits et vos formules :</h1>
 
 <div class="wrapper">
-  <%= simple_form_for :category, url: subscriptions_path, method: 'post' do |f| %>
+  <div class="left-column">
+    <%= simple_form_for :category, url: subscriptions_path, method: 'post' do |f| %>
 
-        <% @categories.each do |category| %>
+          <% @categories.each do |category| %>
 
-          <div class="subscription-category-card">
-              <h4><%= category.name %></h4>
-                <p>Légumes issus de l'agriculture en Biodynamie d'Adrien, à Curis-au-Mont d'Or.</p>
+            <div class="subscription-category-card">
+                <h4><%= category.name %></h4>
+                  <p>Légumes issus de l'agriculture en Biodynamie d'Adrien, à Curis-au-Mont d'Or.</p>
 
-                <div class="wrap-categories">
-              <% category.options.each do |option| %>
-                <!--   <label class="subscriptions_target"> -->
-                    <input id="<%= option.id %>" class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> : <%= option.price %> €
-                  <label for="<%= option.id %>"></label></label>
-              <% end %>
+                  <div class="wrap-categories">
+                <% category.options.each do |option| %>
+                    <div class="subscriptions_target">
+                      <input id="<%= option.id %>" class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> : <%= option.price %> €
+                        <label for="<%= option.id %>"></label>
+                    </div>
+                <% end %>
 
-          </div>
-                </div>
-        <% end %>
-      <div class="options-submit">
-        <%= f.button :submit, value="Valider mon adhésion" %>
+            </div>
+                  </div>
+          <% end %>
+        <div class="options-submit">
+          <%= f.button :submit, value="Valider mon adhésion" %>
+        </div>
+    <% end %>
+  </div>
+
+
+  <div class="right-column">
+    <div class="total-card">
+      <p>Légumes : Méli-Mélo</p>
+      <p>Volaille : Famille</p>
+      <div class="total-inline">
+        <h2>Total :</h2>
+        <h2>44 €</h2>
       </div>
-  <% end %>
+
+    </div>
+
+
+
+
+
+
+  </div>
 </div>
+
 
 <script type="text/javascript">
 
@@ -37,21 +60,13 @@
             if(input.checked == false){
 
               input.checked = true
-              console.log("coucou")
-              // document.querySelector('subscriptions_target').classList.add('select_category');
+
             } else {
               input.checked = false
-              console.log("slat")
+
             }
           });
         }
     }));
-
-    // labels.forEach((label) => {
-    //   label.addEventListener("click", (event) => {
-    //     console.log(event)
-    //     event.currentTarget.classList.toggle("select_category");
-    //   })
-    // });
 
 </script>

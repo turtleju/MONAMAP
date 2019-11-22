@@ -6,17 +6,17 @@ h1 {
 .wrapper {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
+  grid-gap: 16px;
 }
 
 .subscription-category-card {
-  // position: absolute;
+  position: relative;
+  // z-index: -200;
   height: auto;
-  left: 151px;
-  top: 139px;
   margin-bottom: 16px;
 
   background: #FFFFFF;
-  border: 3px solid #6AA1AD;
+  border: 2px solid #6AA1AD;
   box-sizing: border-box;
   border-radius: 12px;
   padding: 8px;
@@ -27,37 +27,46 @@ h1 {
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   white-space: nowrap;
+  padding-bottom: 8px;
 }
 
 // .script-selector {
 //   display: none;
 // }
 
+
+
 label {
-  padding: 8px;
-  margin-left: 8px;
-  margin-right: 8px;
+  position: absolute;
+  left: 0;
+  // z-index: -100;
+  padding: 15px 100px;
   border-radius: 4px;
   background-color: $my-dark-blue;
   color: $my-white;
   text-align: center;
 }
-// test kevin
+
 label:hover {
   background-color: $my-median-blue;
 }
 
 input[type="radio"] {
   display: none;
+  position: relative;
 }
 
 input[type=radio]:checked + label {
-  background: red;
+  background: $my-dark-yellow;
 }
-// fin test kevin
-.select_category {
-  background-color: $my-dark-yellow;
+
+input[type=radio]:active + label {
+  background: $my-light-yellow;
 }
+
+// .select_category {
+//   background-color: $my-dark-yellow;
+// }
 
 .options-submit {
   padding: 12px;
@@ -70,4 +79,24 @@ input[type=radio]:checked + label {
 
 .options-submit:hover {
   background-color: $my-orange;
+}
+
+.subscriptions_target {
+  position: relative;
+}
+
+.total-card {
+  height: auto;
+  margin-bottom: 16px;
+  background: $my-light-yellow;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 8px;
+  position: sticky;
+  top: 0;
+}
+
+.total-inline {
+  display: flex;
+  justify-content: space-between;
 }
