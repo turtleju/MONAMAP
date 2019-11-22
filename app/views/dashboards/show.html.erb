@@ -11,13 +11,16 @@
       <div class="avatar-category">
       <%= image_tag option.category.photo, alt:"category", width:54, height:54 %>
       </div>
-        <div class="text-card">
-          <div class="text-category">
-            <p class="category-name"><%= option.category.name %></p>
-            <p class="category-option"><%= option.name%></p>
-          </div>
-          <div class="price-category">
-            <p class="price"><%= option.price %> €</p>
+
+        <div class="inline-text">
+          <div class="text-card">
+            <div class="text-category">
+              <p class="category-name"><%= option.category.name %></p>
+              <p class="category-option"><%= option.name%></p>
+            </div>
+            <div class="price-category">
+              <p class="price"><%= option.price %> €</p>
+            </div>
           </div>
         </div>
       </div>
@@ -27,3 +30,26 @@
 
   </div>
 </section>
+
+<div class="container">
+  <section class="payments">
+    <h3>Mes règlements</h3>
+    <p>Premier paiement le 02 janvier 2019</p>
+      <div class="inline inline-white">
+        <p>Montant mensuel</p>
+        <p>101 €</p>
+      </div>
+      <div class="inline inline-white">
+        <p>Montant annuel</p>
+        <p>1212 €</p>
+      </div>
+
+      <h4>Date de paiement</h4>
+      <p>Le 6 de chaque mois</p>
+      <h4>Dernier paiement</h4>
+      <p>Le 6 décembre 2019</p>
+      <h4>Prochain paiement</h4>
+      <p>Les règlements pour l'année 2019 sont terminées</p>
+
+  </section>
+</div>
