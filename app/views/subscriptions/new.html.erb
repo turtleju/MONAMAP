@@ -37,37 +37,16 @@
         <h2>Total :</h2>
         <h2>44 €</h2>
       </div>
-
     </div>
-
-
-
-
-
-
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
   </div>
+
+
 </div>
 
-
-<%# <script type="text/javascript">
-
-  const inputs = document.querySelectorAll('.script-selector');
-  const labels = document.querySelectorAll('.subscriptions_target');
-
-    inputs.forEach(input =>
-      input.addEventListener("click", function firstStep(){
-        if(input.checked == true){
-          input.addEventListener("click", function secondStep() {
-            if(input.checked == false){
-
-              input.checked = true
-
-            } else {
-              input.checked = false
-
-            }
-          });
-        }
-    }));
-
-</script> %>
