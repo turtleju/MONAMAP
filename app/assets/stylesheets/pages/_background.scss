@@ -1,7 +1,8 @@
 body {
-  background-image: asset-url("bg-shape-blue.svg");
+  background-image: asset-url("body-bg.svg");
   background-position: top right;
   background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 // #bg-bottom {

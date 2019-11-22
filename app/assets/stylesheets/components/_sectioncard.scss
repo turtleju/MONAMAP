@@ -7,7 +7,7 @@
   h3 {
     margin-bottom: 0px;
   }
-  margin-bottom: 500px;
+  margin-bottom: 16px;
 }
 
 .category-card {
@@ -32,6 +32,13 @@
 .inline-text {
   display: flex-grow;
   width: 100%;
+}
+
+.inline-white {
+  background-color: $my-white;
+  margin-bottom: 6px;
+  color: $my-black;
+  padding: 6px;
 }
 
 .text-card {
@@ -64,4 +71,17 @@
 .category-option {
   font-family: $light-font;
   font-size: 12px;
+}
+
+.payments {
+  background-color: $my-dark-blue;
+  color: $my-white;
+  width: 340px;
+  height: fit-content;
+  border-radius: 25px;
+  padding: 16px;
+  h3 {
+    margin-bottom: 0px;
+  }
+    margin-bottom: 16px;
 }
