@@ -74,7 +74,7 @@ input[type=radio]:active + label {
   font-family: $bold-font;
   padding: 12px;
   border-radius: 4px;
-  background-color: $my-red;
+  background-color: $my-median-blue;
   width: 300px;
   text-align: center;
   margin-bottom: 25px;
@@ -82,7 +82,7 @@ input[type=radio]:active + label {
 }
 
 .options-submit:hover {
-  background-color: $my-orange;
+  background-color: $my-dark-blue;
 }
 
 .subscriptions_target {
