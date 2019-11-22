@@ -3,6 +3,14 @@ class SubscriptionsController < ApplicationController
     @categories = Category.all
     @options = Option.all
     @producers = Producer.all
+    @producers = Producer.geocoded
+
+    @markers = @producers.map do |producer|
+      {
+        lat: producer.latitude,
+        lng: producer.longitude
+      }
+    end
   end
 
   def create
