@@ -14,27 +14,21 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.new(current_user.id)
-    @options = [cat1_option1, cat2_option1, cat3_option2, cat5_option3]
-    @options.each do |option|
-
-      SubscriptionOption.new(
+    @subscription = Subscription.create(user: current_user)
+    categories = params[:category]
+    categories.each do |category, option|
+      SubscriptionOption.create!(
         subscription_id: @subscription.id,
-        option_id: option.id
+        option_id: option.to_i
       )
-
-      if SubscriptionOption.save!
-        redirect_to dashboard_path
-      else
-        render :new
-      end
     end
+    redirect_to dashboard_path
   end
 
   private
 
   def params_options
-    params.require(:options).permit(:option_id)
+    params.require(:options).permit(:category)
   end
 
 end

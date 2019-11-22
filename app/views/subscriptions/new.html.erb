@@ -8,13 +8,14 @@
 
             <div class="subscription-category-card">
                 <h4><%= category.name %></h4>
-                  <p>Légumes issus de l'agriculture en Biodynamie d'Adrien, à Curis-au-Mont d'Or.</p>
+                <p><%= category.producer.description %></p>
+                  <%# <p>Légumes issus de l'agriculture en Biodynamie d'Adrien, à Curis-au-Mont d'Or.</p> %>
 
                   <div class="wrap-categories">
                 <% category.options.each do |option| %>
                     <div class="subscriptions_target">
-                      <input id="<%= option.id %>" class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> : <%= option.price %> €
-                        <label for="<%= option.id %>"></label>
+                      <input id="<%= option.id %>" data-category="<%= option.category.name %>" data-price="<%= option.price %>" data-name="<%= option.name %>" class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> : <%= option.price %> €
+                        <label for="<%= option.id %>"><%= option.name %> : <%= option.price %> €</label>
                     </div>
                 <% end %>
 
@@ -22,7 +23,7 @@
                   </div>
           <% end %>
         <div class="options-submit">
-          <%= f.button :submit, value="Valider mon adhésion" %>
+            <%= f.button :submit, value="Je valide mon adhésion!" %>
         </div>
     <% end %>
   </div>
@@ -49,25 +50,3 @@
 
 </div>
 
-<script type="text/javascript">
-
-  const inputs = document.querySelectorAll('.script-selector');
-  const labels = document.querySelectorAll('.subscriptions_target');
-
-    inputs.forEach(input =>
-      input.addEventListener("click", function firstStep(){
-        if(input.checked == true){
-          input.addEventListener("click", function secondStep() {
-            if(input.checked == false){
-
-              input.checked = true
-
-            } else {
-              input.checked = false
-
-            }
-          });
-        }
-    }));
-
-</script>
