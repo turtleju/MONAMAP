@@ -11,13 +11,16 @@
       <div class="avatar-category">
       <%= image_tag option.category.photo, alt:"category", width:54, height:54 %>
       </div>
-        <div class="text-card">
-          <div class="text-category">
-            <p class="category-name"><%= option.category.name %></p>
-            <p class="category-option"><%= option.name%></p>
-          </div>
-          <div class="price-category">
-            <p class="price"><%= option.price %> €</p>
+
+        <div class="inline-text">
+          <div class="text-card">
+            <div class="text-category">
+              <p class="category-name"><%= option.category.name %></p>
+              <p class="category-option"><%= option.name%></p>
+            </div>
+            <div class="price-category">
+              <p class="price"><%= option.price %> €</p>
+            </div>
           </div>
         </div>
       </div>
