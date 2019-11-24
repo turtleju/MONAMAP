@@ -133,16 +133,16 @@ user4 = User.create!(
   distribution_id: distribution.id
   )
 
-vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer, photo: "vegetables.png")
-fruits_category = Category.create!(name: "Fruits", producer: fruits_producer, photo: "apples.png")
-cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer, photo: "cheese.png")
-eggs_category = Category.create!(name: "Oeufs BIO", producer:  eggs_producer, photo: "egg.png")
-bread_category = Category.create!(name: "Pain BIO", producer:  bread_producer, photo: "bread.png")
-flour_category = Category.create!(name: "Farine BIO", producer:  flour_producer, photo: "flour.png")
-chicken_category = Category.create!(name: "Volaille BIO", producer:  chicken_producer, photo: "chicken.png")
-veal_category = Category.create!(name: "Veau BIO", producer:  veal_producer, photo: "veal.png")
-pork_category = Category.create!(name: "Porc BIO", producer: pork_producer, photo: "pork.png")
-beef_category = Category.create!(name: "Boeuf BIO", producer: beef_producer, photo: "meat.png")
+vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer, photo: "icon-vegetables.png")
+fruits_category = Category.create!(name: "Fruits", producer: fruits_producer, photo: "icon-fruits.png")
+cheese_category = Category.create!(name: "Fromages BIO", producer: cheese_producer, photo: "icon-cheese.png")
+eggs_category = Category.create!(name: "Oeufs BIO", producer:  eggs_producer, photo: "icon-eggs.png")
+bread_category = Category.create!(name: "Pain BIO", producer:  bread_producer, photo: "icon-bread.png")
+flour_category = Category.create!(name: "Farine BIO", producer:  flour_producer, photo: "icon-flour.png")
+chicken_category = Category.create!(name: "Volaille BIO", producer:  chicken_producer, photo: "icon-chicken.png")
+veal_category = Category.create!(name: "Veau BIO", producer:  veal_producer, photo: "icon-veal.png")
+pork_category = Category.create!(name: "Porc BIO", producer: pork_producer, photo: "icon-pork.png")
+beef_category = Category.create!(name: "Boeuf BIO", producer: beef_producer, photo: "icon-beef.png")
 
 Option.create!(
   name:"panier DUO",
