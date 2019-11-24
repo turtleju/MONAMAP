@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   def show
+
     # @paid = "1375€"
     # @next_payment = "04-12-2019"
     # @end = "31-12-2019"
