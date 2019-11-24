@@ -1,2 +1,80 @@
 // Specific CSS for your home-page
 @import "background";
+
+.banner-home {
+  background-image: asset-url("banner-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  height: 90vh;
+  padding: 130px 0;
+  margin-bottom: 40px;
+  h1 {
+    margin: 0;
+  }
+
+  div p {
+    width: 150px;
+    font-size: 24px;
+  }
+}
+
+.subscribe-button {
+    border-radius: 10px;
+    background: $my-dark-yellow;
+    box-shadow: 0 0.1875rem 0.3125rem 0 rgba(155,170,185,0.6);
+    color: #fff;
+    padding: 8px 32px;
+    font-family: $bold-font;
+    font-size: 24px;
+    letter-spacing: 2px;
+    display: inline-block;
+    transition: 0.2s background-color, 0.2s transform, 0.2s opacity;
+}
+
+.subscribe-button:hover {
+    opacity: 0.8;
+    transform: translateY(-0.188rem);
+}
+
+a:hover {
+  text-decoration: none;
+  color: $my-white;
+}
+
+h2 {
+  text-align: center;
+  color: $my-dark-blue;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+h3 {
+  margin-bottom: 24px;
+}
+
+.categories-inline {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  img {
+    width: 96px;
+    height: 96px;
+    margin: 16px;
+  }
+}
+
+.categories-home {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.categories-home:hover {
+    transform: scale(1.15);
+}
