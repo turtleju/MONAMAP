@@ -2,7 +2,7 @@
 const check_box = () => {
 
 const inputs = document.querySelectorAll('.script-selector');
-const labels = document.querySelectorAll('.subscriptions_target');
+//const labels = document.querySelectorAll('.subscriptions_target');
 
 
   inputs.forEach(input =>

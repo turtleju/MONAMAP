@@ -7,9 +7,10 @@ const total = () => {
     document.querySelector('form').addEventListener('change', () => {
         let price = 0;
         const inputs = document.querySelectorAll('input[type="radio"]:checked');
-        console.log(inputs);
+        //console.log(inputs);
         total_card.innerHTML = '';
         inputs.forEach((input) => {
+
           total_card.insertAdjacentHTML('afterbegin',`<p>${input.dataset.category}</p>`);
           price += parseFloat(input.dataset.price);
         });
