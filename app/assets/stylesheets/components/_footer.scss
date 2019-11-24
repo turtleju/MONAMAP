@@ -1,0 +1,47 @@
+.footer-main {
+  background-color: $my-dark-blue;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  p {
+    font-size: 12px;
+    color: $my-white;
+    margin-bottom: 0;
+  }
+}
+
+.wrap-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.monamap-logo {
+  display: flex;
+  align-items: center;
+  // align-items: flex-end;
+  p {
+    padding-left: 4px;
+    font-size: 16px;
+  }
+}
+
+.love {
+  display: flex;
+  i {
+    color: $my-red;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+.social-network {
+  font-size: 32px;
+  color: $my-white;
+  i {
+    margin-left: 12px;
+  }
+}
+
+#center-footer {
+  margin-left: 70px;
+}
