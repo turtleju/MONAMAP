@@ -16,6 +16,7 @@
               <p class="category-name"><%= option.category.name %></p>
               <p class="category-option"><%= option.name%></p>
             </div>
+
             <div class="price-category">
               <p class="price"><%= option.price %> €</p>
             </div>
@@ -25,18 +26,35 @@
 
     <% end %>
 
-    </div>
   </section>
 
-  <section class="producers">
-    <h3>Nos producteurs :</h3>
-      <div class="inline-producers">
-      <div class="producer1"></div>
-      <div class="producer2"></div>
-      <div class="producer3"></div>
-      <div class="producer4"></div>
-    <div class="producer5"></div>
+
+
+  <section class="events">
+
+    <div>
+      <h3>Mes distributions</h3>
+      <% user1 = User.find(id =  48) %>
+      <% if user1.distribution %>
+      <p> <%= user1.distribution.date %></p>
+      <% else  %>
+      <p>Vous n'avez pas de distribution de prévu</p>
+      <% end %>
     </div>
+
+    <div>
+    <h3>Mes Vacances</h3>
+      <% user1 = User.find(id =  48) %>
+      <p> <%= user1.holidays.first.begin %> - <%= user1.holidays.first.end %></p>
+    </div>
+  <div>
+    <h3>Mon panier de la semaine</h3>
+      <% current_user.options.each do |option| %>
+      <p> <%= option.content %> </p>
+      <% # raise %>
+      <% end %>
+    </div>
+
   </section>
 
   <section class="payments">
@@ -58,31 +76,14 @@
         <p>Les règlements pour l'année 2019 sont terminées</p>
   </section>
 
-  <section class="events">
-
-    <div>
-      <h3>Mes distributions</h3>
-      <% user1 = User.find(id =  44) %>
-      <% if user1.distribution %>
-      <p> <%= user1.distribution.date %></p>
-      <% else  %>
-      <p>Vous n'avez pas de distribution de prévu</p>
-      <% end %>
+  <section class="producers">
+    <h3>Nos producteurs :</h3>
+      <div class="inline-producers">
+      <div class="producer1"></div>
+      <div class="producer2"></div>
+      <div class="producer3"></div>
+      <div class="producer4"></div>
+    <div class="producer5"></div>
     </div>
-
-    <div>
-    <h3>Mes Vacances</h3>
-      <% user1 = User.find(id =  44) %>
-      <p> <%= user1.holidays.first.begin %> - <%= user1.holidays.first.end %></p>
-    </div>
-  <div>
-    <h3>Mon panier de la semaine</h3>
-      <% current_user.options.each do |option| %>
-      <p> <%= option.content %> </p>
-      <% # raise %>
-      <% end %>
-    </div>
-
   </section>
-
 </div>
