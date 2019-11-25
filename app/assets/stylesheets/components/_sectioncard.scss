@@ -1,6 +1,6 @@
 .wrap-dashboard {
   display: grid;
-  grid-template-columns: 0.6fr 1fr;
+  grid-template-columns: 0.5fr 1fr;
 }
 
 
@@ -150,4 +150,41 @@
     margin-bottom: 0px;
   }
     margin-bottom: 16px;
+}
+
+.events {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: min-content;
+  grid-gap: 16px;
+}
+
+.distribution-card {
+  background-color: $my-median-blue;
+  padding: 12px;
+  border-radius: 25px;
+  margin-bottom: 16px;
+}
+
+.holidays-card {
+  background-color: $my-light-blue;
+  padding: 12px;
+  border-radius: 25px;
+  height: fit-content;
+}
+
+.weekly-basket-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 16px;
+  border-radius: 25px;
+  h4 {
+    color: $my-dark-yellow;
+    text-align: center;
+  }
+  .cat-name {
+    margin-bottom: 0;
+  }
+  span {
+    background-color: $my-white;
+  }
 }
