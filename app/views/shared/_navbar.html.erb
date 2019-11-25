@@ -1,8 +1,16 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-monamap">
+<div class="navbar navbar-expand-sm navbar-monamap fixed-top">
     <div class="container">
-      <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "logo.png" %>
+      <%= link_to "#" do %>
+        <div class="logo-inline">
+          <%= image_tag "amap-montsdor.png" %>
+            <div class="text-logo">
+              <span>AMAP</span>
+              <span>des Monts d'Or</span>
+            </div>
+        </div>
       <% end %>
+
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -19,7 +27,7 @@
               </div>
             </li>
           <% else %>
-            <li class="nav-item">
+            <li class="nav-item" id="login-button">
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>

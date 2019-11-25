@@ -1,3 +1,7 @@
+body {
+  padding-top: 90px;
+}
+
 .navbar-monamap {
   justify-content: space-between;
   background: white;
@@ -10,7 +14,7 @@
 }
 
 .navbar-monamap img {
-  width: 50px;
+  width: 60px;
 
 }
 
@@ -18,10 +22,71 @@
   margin-bottom: 16px;
   border-bottom: 1px solid #EDEDED;
   // position: fixed;
-  // top: 0;
-  // width: 100%;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-.navbar-brand img {
-  width: 160px;
+.navbar-expand-sm a {
+    color: $my-black;
+}
+
+.navbar-expand-sm a:hover {
+  color: $my-black;
+}
+
+.logo-inline {
+  display: flex;
+  align-items: center;
+  font-family: $light-font;
+  transition: all 0.2s ease;
+  transform: scale(1);
+}
+
+.logo-inline:hover {
+  transform: scale(1.03);
+}
+
+#login-button {
+  background-color: $my-dark-blue;
+  color: $my-white;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  transform: scale(1);
+  a {
+    color: $my-white;
+  }
+}
+
+#login-button:hover {
+  transform: scale(1.1);
+}
+
+.nav-item {
+  img {
+  transition: all 0.2s ease;
+  transform: scale(1);
+  }
+}
+
+.nav-item:hover {
+  img {
+    transform: scale(1.1);
+  }
+}
+
+.dropdown-menu {
+  min-width: 8rem;
+  margin: 8px 0 0;
+  font-size: 16px;
+  border: 1px solid #EDEDED;
+  border-radius: 10px;
+  text-align: right;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: $my-light-blue;
 }

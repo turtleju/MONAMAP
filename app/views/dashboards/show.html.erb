@@ -68,7 +68,6 @@
       <% else  %>
       <p>Vous n'avez pas de distribution de prévu</p>
       <% end %>
-
     </div>
 
     <div>
@@ -76,7 +75,7 @@
       <% user1 = User.find(id =  44) %>
       <p> <%= user1.holidays.first.begin %> - <%= user1.holidays.first.end %></p>
     </div>
-
+  <div>
     <h3>Mon panier de la semaine</h3>
       <% current_user.options.each do |option| %>
       <p> <%= option.content %> </p>
