@@ -62,7 +62,7 @@
 
     <div>
       <h3>Mes distributions</h3>
-      <% user1 = User.find(id =  44) %>
+      <% user1 = User.find(id =  59) %>
       <% if user1.distribution %>
       <p> <%= user1.distribution.date %></p>
       <% else  %>
@@ -72,7 +72,7 @@
 
     <div>
     <h3>Mes Vacances</h3>
-      <% user1 = User.find(id =  44) %>
+      <% user1 = User.find(id =  59) %>
       <p> <%= user1.holidays.first.begin %> - <%= user1.holidays.first.end %></p>
     </div>
   <div>
