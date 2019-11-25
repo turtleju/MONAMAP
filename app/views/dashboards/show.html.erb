@@ -31,36 +31,39 @@
 
 
   <section class="events">
+    <div class="calendar-card">
+      <div class="distribution-card">
+        <h4>Mes distributions</h4>
 
-    <div>
-      <h3>Mes distributions</h3>
-
-      <% if current_user.distribution %>
-      <p> <%= current_user.distribution.date %></p>
-      <% else  %>
-      <p>Vous n'avez pas de distribution de prévu</p>
-      <% end %>
-    </div>
-
-    <div>
-    <h3>Mes Vacances</h3>
-
-      <% if current_user.holidays.blank? %>
-        <p> Vous n'avez pas encore poser de vacances</p>
-      <% else %>
-        <% current_user.holidays.each do | holiday| %>
-        <p> <%= holiday.begin %> - <%= holiday.end %></p>
+        <% if current_user.distribution %>
+          <p> <%= current_user.distribution.date %></p>
+        <% else  %>
+          <p>Vous n'avez pas de distribution de prévu</p>
         <% end %>
-      <% end %>
+      </div>
+
+      <div class="holidays-card">
+      <h4>Mes Vacances</h4>
+
+        <% if current_user.holidays.blank? %>
+          <p> Vous n'avez pas encore poser de vacances</p>
+        <% else %>
+          <% current_user.holidays.each do | holiday| %>
+            <p> <%= holiday.begin %> - <%= holiday.end %></p>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-  <div>
-    <h3>Mon panier de la semaine</h3>
+
+  <div class="weekly-basket-card">
+    <h4>Mon panier de la semaine</h4>
       <% current_user.options.each do |option| %>
+      <p class="cat-name"><span> <%= option.category.name %> :</span></p>
       <p> <%= option.content %> </p>
       <% end %>
     </div>
-
   </section>
+
 
   <section class="payments">
     <h3>Mes règlements</h3>
