@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_112131) do
+ActiveRecord::Schema.define(version: 2019_11_25_171351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(version: 2019_11_25_112131) do
     t.text "content"
     t.integer "price_cents", default: 0, null: false
     t.index ["category_id"], name: "index_options_on_category_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "subscription_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_orders_on_subscription_id"
   end
 
   create_table "producers", force: :cascade do |t|
@@ -112,6 +122,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_112131) do
   add_foreign_key "categories", "producers"
   add_foreign_key "holidays", "users"
   add_foreign_key "options", "categories"
+  add_foreign_key "orders", "subscriptions"
   add_foreign_key "subscription_options", "options"
   add_foreign_key "subscription_options", "subscriptions"
   add_foreign_key "subscriptions", "users"

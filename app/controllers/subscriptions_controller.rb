@@ -22,13 +22,36 @@ class SubscriptionsController < ApplicationController
         option_id: option.to_i
       )
     end
-    redirect_to dashboard_path
+
+    create_order_and_checkout_session
+    # raise
+    redirect_to new_payment_path(order_id: @order.id)
+    # redirect_to orders_path
   end
 
   private
 
   def params_options
-    params.require(:options).permit(:category)
+    params.require(:options).permit(:categories)
   end
 
+  def create_order_and_checkout_session
+    @order  = Order.create!(subscription_id: @subscription.id, amount_cents: @subscription.price_cents, state: 'pending')
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [
+       #options.each 
+      {
+        name: "test",
+        # images: [teddy.photo_url],
+        amount: @subscription.price_cents,
+        currency: 'eur',
+        quantity: 1
+        }],
+        success_url: dashboard_url,
+        cancel_url: subscriptions_url
+    )
+     
+    @order.update(checkout_session_id: session.id)
+  end
 end

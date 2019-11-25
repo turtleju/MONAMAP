@@ -14,8 +14,8 @@
                   <div class="wrap-categories">
                 <% category.options.each do |option| %>
                     <div class="subscriptions_target">
-                      <input id="<%= option.id %>" data-category="<%= option.category.name %>" data-price="<%= option.price %>" data-name="<%= option.name %>" class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]"> <%= option.name %> : <%= option.price %> €
-                        <label for="<%= option.id %>"><%= option.name %> : <%= humanized_money_with_symbol(option.price) %></label>
+                      <input id="<%= option.id %>" data-category="<%= option.category.name %>" data-price="<%= option.price %>" data-name="<%= option.name %>" class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]">
+                        <label for="<%= option.id %>"><%= option.name %> : <%= humanized_money_with_symbol(option.price)%></label>
                     </div>
                 <% end %>
 

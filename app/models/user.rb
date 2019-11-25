@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :subscriptions
+  has_many :orders, through: :subscriptions
   has_many :subscription_options, through: :subscriptions
   has_many :options, through: :subscription_options
 
