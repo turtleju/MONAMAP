@@ -34,6 +34,7 @@
 
     <div>
       <h3>Mes distributions</h3>
+
       <% if current_user.distribution %>
       <p> <%= current_user.distribution.date %></p>
       <% else  %>
@@ -43,6 +44,7 @@
 
     <div>
     <h3>Mes Vacances</h3>
+
       <% if current_user.holidays.blank? %>
         <p> Vous n'avez pas encore poser de vacances</p>
       <% else %>
