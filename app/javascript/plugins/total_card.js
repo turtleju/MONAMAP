@@ -1,8 +1,11 @@
 
 const total = () => {
+
     const total_card = document.querySelector(".total-card");
-    
-    document.querySelector('form').addEventListener('change', () => {
+    const formulaire = document.querySelector('form');
+
+    if (formulaire) {
+    formulaire.addEventListener('change', () => {
       let price = 0;
       const inputs = document.querySelectorAll('input[type="radio"]:checked');
       total_card.innerHTML = '';
@@ -14,6 +17,7 @@ const total = () => {
 
       total_card.insertAdjacentHTML('beforeend', prixtotal);
     });
+  }
 };
 
 export { total };

@@ -34,10 +34,9 @@
 
     <div>
       <h3>Mes distributions</h3>
-      <% user1 = User.find(id =  48) %>
 
-      <% if user1.distribution %>
-      <p> <%= user1.distribution.date %></p>
+      <% if current_user.distribution %>
+      <p> <%= current_user.distribution.date %></p>
       <% else  %>
       <p>Vous n'avez pas de distribution de prévu</p>
       <% end %>
@@ -45,15 +44,19 @@
 
     <div>
     <h3>Mes Vacances</h3>
-      <% user1 = User.find(id =  48) %>
 
-      <p> <%= user1.holidays.first.begin %> - <%= user1.holidays.first.end %></p>
+      <% if current_user.holidays.blank? %>
+        <p> Vous n'avez pas encore poser de vacances</p>
+      <% else %>
+        <% current_user.holidays.each do | holiday| %>
+        <p> <%= holiday.begin %> - <%= holiday.end %></p>
+        <% end %>
+      <% end %>
     </div>
   <div>
     <h3>Mon panier de la semaine</h3>
       <% current_user.options.each do |option| %>
       <p> <%= option.content %> </p>
-      <% # raise %>
       <% end %>
     </div>
 
