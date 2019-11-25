@@ -1,4 +1,6 @@
 class DashboardsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def show
 
     # @paid = "1375€"
@@ -14,5 +16,9 @@ class DashboardsController < ApplicationController
     #   @options << subscription_option.option
     #   @cart << subscription_option.option.content
     # end
+  end
+
+  def add_user_to_distrib
+    current_user.update(distribution_id: Distribution.first.id)
   end
 end
