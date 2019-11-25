@@ -1,3 +1,107 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 16px 22px;
+  transition: all 0.2s ease;
+}
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: rgba(255, 171, 157, 0.5);
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+.cta span {
+  position: relative;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+.cta:hover:before {
+  width: 100%;
+  background: #ffab9d;
+}
+.cta:hover svg {
+  transform: translateX(0);
+}
+.cta:active {
+  transform: scale(0.96);
+}
+
+
+
+.grid-alert {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.distribution-card {
+  border: 3px solid rgba(240, 135, 119, 0.7);
+  // color: rgba(240, 135, 119, 0.7);
+  padding-top: 12px;
+  padding-bottom: 24px;
+  border-radius: 25px;
+  margin-bottom: 16px;
+  h4 {
+    font-family: $light-font;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.holidays-card {
+  background-color: $my-light-blue;
+  padding: 12px;
+  border-radius: 25px;
+  height: fit-content;
+  margin-bottom: 16px;
+  p {
+    margin: 0;
+  }
+}
+
+.ok-button {
+  background-color: $my-white;
+  font-family: $bold-font;
+  text-align: center;
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 3px 0px;
+  transition: all 0.2s ease;
+  transform: scale(1);
+}
+
+.ok-button:hover {
+  transform: scale(1.05);
+}
+
 .wrap-dashboard {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
@@ -159,19 +263,6 @@
   grid-gap: 16px;
 }
 
-.distribution-card {
-  background-color: $my-median-blue;
-  padding: 12px;
-  border-radius: 25px;
-  margin-bottom: 16px;
-}
-
-.holidays-card {
-  background-color: $my-light-blue;
-  padding: 12px;
-  border-radius: 25px;
-  height: fit-content;
-}
 
 .weekly-basket-card {
   background-color: rgba(255, 255, 255, 0.5);
@@ -188,3 +279,4 @@
     background-color: $my-white;
   }
 }
+
