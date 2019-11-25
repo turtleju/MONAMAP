@@ -1,59 +1,88 @@
 <!-- <h1>L'AMAP Dorée, Saône Mont d'Or</h1> -->
+<div class="wrap-dashboard">
+  <section class="abonnement">
+    <h3>Mon abonnement</h3>
+    <p>Prend fin le 31 décembre 2019</p>
 
-<section class="abonnement">
-  <h3>Mon abonnement</h3>
-  <p>Prend fin le 31 décembre 2019</p>
+    <% current_user.options.each do |option| %>
 
-  <% current_user.options.each do |option| %>
-
-  <div class="category-card">
-    <div class="inline">
-      <div class="avatar-category">
-      <%= image_tag option.category.photo, alt:"category", width:54, height:54 %>
-      </div>
-        <div class="text-card">
-          <div class="text-category">
-            <p class="category-name"><%= option.category.name %></p>
-            <p class="category-option"><%= option.name%></p>
-          </div>
-          <div class="price-category">
-            <p class="price"><%= option.price %> €</p>
+    <div class="category-card">
+      <div class="inline">
+        <div class="avatar-category">
+        <%= image_tag option.category.photo, alt:"category", width:54, height:54 %>
+        </div>
+          <div class="text-card">
+            <div class="text-category">
+              <p class="category-name"><%= option.category.name %></p>
+              <p class="category-option"><%= option.name%></p>
+            </div>
+            <div class="price-category">
+              <p class="price"><%= option.price %> €</p>
+            </div>
           </div>
         </div>
       </div>
+
+    <% end %>
+
+    </div>
+  </section>
+
+  <section class="producers">
+    <h3>Nos producteurs :</h3>
+      <div class="inline-producers">
+      <div class="producer1"></div>
+      <div class="producer2"></div>
+      <div class="producer3"></div>
+      <div class="producer4"></div>
+    <div class="producer5"></div>
+    </div>
+  </section>
+
+  <section class="payments">
+    <h3>Mes règlements</h3>
+      <p>Premier paiement le 02 janvier 2019</p>
+        <div class="inline inline-white">
+          <p>Montant mensuel</p>
+          <p>101 €</p>
+        </div>
+        <div class="inline inline-white">
+          <p>Montant annuel</p>
+          <p>1212 €</p>
+        </div>
+        <h4>Date de paiement</h4>
+        <p>Le 6 de chaque mois</p>
+        <h4>Dernier paiement</h4>
+        <p>Le 6 décembre 2019</p>
+        <h4>Prochain paiement</h4>
+        <p>Les règlements pour l'année 2019 sont terminées</p>
+  </section>
+
+  <section class="events">
+
+    <div>
+      <h3>Mes distributions</h3>
+      <% user1 = User.find(id =  44) %>
+      <% if user1.distribution %>
+      <p> <%= user1.distribution.date %></p>
+      <% else  %>
+      <p>Vous n'avez pas de distribution de prévu</p>
+      <% end %>
     </div>
 
-  <% end %>
-
-  </div>
-</section>
-
-<section class="events">
-
+    <div>
+    <h3>Mes Vacances</h3>
+      <% user1 = User.find(id =  44) %>
+      <p> <%= user1.holidays.first.begin %> - <%= user1.holidays.first.end %></p>
+    </div>
   <div>
-    <h3>Mes distributions</h3>
-    <% user1 = User.find(id =  38) %>
-    <% if user1.distribution %>
-    <p> <%= user1.distribution.date %></p>
-    <% else  %>
-    <p>Vous n'avez pas de distribution de prévu</p>
-    <% end %>
+    <h3>Mon panier de la semaine</h3>
+      <% current_user.options.each do |option| %>
+      <p> <%= option.content %> </p>
+      <% # raise %>
+      <% end %>
+    </div>
 
-  </div>
+  </section>
 
-  <div>
-  <h3>Mes Vacances</h3>
-    <% user1 = User.find(id =  38) %>
-    <p> <%= user1.holidays.first.begin %> - <%= user1.holidays.first.end %></p>
-  </div>
-
-  <h3>Mon panier de la semaine</h3>
-    <% current_user.options.each do |option| %>
-    <p> <%= option.content %> </p>
-    <% # raise %>
-    <% end %>
-  </div>
-
-</section>
-
-
+</div>
