@@ -51,9 +51,10 @@
   display: flex;
   justify-content: space-between;
   background-color: $my-white;
-  padding-bottom: 6px;
+  padding-bottom: 0px;
   padding-right: 6px;
   padding-left: 6px;
+  flex-grow: 1;
 }
 
 .text-category {
