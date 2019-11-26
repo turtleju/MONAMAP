@@ -2,7 +2,7 @@
 const total = () => {
 
     const total_card = document.querySelector(".total-card");
-    const formulaire = document.querySelector('form');
+    const formulaire = document.querySelector('.simple_form.category');
 
     if (formulaire) {
     formulaire.addEventListener('change', () => {
