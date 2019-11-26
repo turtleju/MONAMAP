@@ -25,6 +25,14 @@ h1 {
   box-shadow: 0px 2px 10px rgba(164, 160, 160, 0.17);
 }
 
+.category-inline {
+  display: flex;
+  align-items: center;
+  img {
+  margin-right: 8px;
+  }
+}
+
 .wrap-categories {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

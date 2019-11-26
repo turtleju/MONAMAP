@@ -7,7 +7,10 @@
           <% @categories.each do |category| %>
 
             <div class="subscription-category-card">
+              <div class="category-inline">
+                <%= image_tag category.photo, width:54, height:54 %>
                 <h4><%= category.name %></h4>
+              </div>
                 <p><%= category.producer.description %></p>
                   <%# <p>Légumes issus de l'agriculture en Biodynamie d'Adrien, à Curis-au-Mont d'Or.</p> %>
 
