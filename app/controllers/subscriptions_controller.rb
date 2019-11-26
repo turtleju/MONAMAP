@@ -40,7 +40,7 @@ class SubscriptionsController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [
-       #options.each 
+       #options.each
       {
         name: "test",
         # images: [teddy.photo_url],
@@ -51,7 +51,7 @@ class SubscriptionsController < ApplicationController
         success_url: dashboard_url,
         cancel_url: subscriptions_url
     )
-     
+
     @order.update(checkout_session_id: session.id)
   end
 end

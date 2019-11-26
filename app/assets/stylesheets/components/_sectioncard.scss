@@ -82,8 +82,19 @@ a {
   margin-bottom: 16px;
   p {
     margin: 0;
+    font-size: 14px;
   }
 }
+
+.holidays-inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+#holidays-date {
+
+}
+
 
 .ok-button {
   background-color: $my-white;
@@ -176,7 +187,7 @@ a {
 
 .category-name {
   font-family: $bold-font;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .category-option {
@@ -279,4 +290,3 @@ a {
     background-color: $my-white;
   }
 }
-

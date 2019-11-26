@@ -2,16 +2,16 @@
 
 <div class="grid-alert">
   <div class="distribution-card">
-      <% if Distribution.first.users.count < 4 %>
+      <% if Distribution.first.users.count < 10 %>
         <h4>Il nous manque une personne pour la distribution de mercredi prochain, de 18h à 19h30 🙏</h4>
             <%= button_to "J'y serai !", distribution_path, method: :put, :class => "cta" %>
-          <a href="#" class="cta">
-            <span>OK, je m'inscris !</span>
-            <svg width="13px" height="10px" viewBox="0 0 13 10">
-              <path d="M1,5 L11,5"></path>
-              <polyline points="8 1 12 5 8 9"></polyline>
-            </svg>
-          </a>
+            <a href="#" class="cta">
+              <span>OK, je m'inscris !</span>
+              <svg width="13px" height="10px" viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+              </svg>
+            </a>
 <!--           <div class="ok-button">
             <p>J'y serai !</p>
           </div> -->
@@ -21,16 +21,15 @@
     </div>
 
     <div class="holidays-card">
-      <h4>Mes Vacances</h4>
+      <div class="holidays-inline">
+        <h4>Mes Vacances :</h4>
+        <input type="text" id="holidays-date" placeholder="Mes prochaines vacances!">
+      </div>
+      <span class="js-response-holidays">
+          <p class="no-holidays">Vous avez encore 5 paniers vacances à nous confirmer !</p>
+      </span>
+    </div>
 
-      <% if current_user.holidays.blank? %>
-        <p> Vous n'avez pas encore poser de vacances</p>
-      <% else %>
-        <% current_user.holidays.each do | holiday| %>
-          <p> <%= holiday.begin %> - <%= holiday.end %></p>
-        <% end %>
-      <% end %>
-  </div>
 </div>
 
 <div class="container">
