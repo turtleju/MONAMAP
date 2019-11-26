@@ -8,10 +8,13 @@ class SubscriptionsController < ApplicationController
     @markers = @producers.map do |producer|
       {
         lat: producer.latitude,
-        lng: producer.longitude
+        lng: producer.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { producer: producer }),
+        image_url: helpers.asset_url('icon-flour.png')
       }
     end
   end
+
 
   def create
     @subscription = Subscription.create(user: current_user)
@@ -40,7 +43,7 @@ class SubscriptionsController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [
-       #options.each 
+       #options.each
       {
         name: "test",
         # images: [teddy.photo_url],
@@ -51,7 +54,7 @@ class SubscriptionsController < ApplicationController
         success_url: dashboard_url,
         cancel_url: subscriptions_url
     )
-     
+
     @order.update(checkout_session_id: session.id)
   end
 end
