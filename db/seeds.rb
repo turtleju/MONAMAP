@@ -1,5 +1,6 @@
 puts 'SEED START'
 
+Order.destroy_all
 Holiday.destroy_all
 Absence.destroy_all
 SubscriptionOption.destroy_all
