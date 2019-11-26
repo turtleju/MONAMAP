@@ -1,12 +1,24 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"><%= image_tag 'icon-cheese.png', width: '100%' %></div>
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.subscription.id %></strong> for <strong><%= humanized_money_with_symbol(@order.amount) %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
-    
-      <script src="https://js.stripe.com/v3/"></script>
+<div class= "payment-container">
+  <div class= "row">
+    <% @order.options.each do |option| %>
+      <div class="payment-category-list">
+        <div class="payment-category-icone">
+          <%= image_tag option.category.photo, width: '80px', height: '80px' %>
+        </div>
+        <div class="payment-options">
+          <h4> Category: <%= option.category.name %> </h4>
+          <p>Option: <%= option.name %></p>
+          <p>Price : <%= humanized_money_with_symbol(@order.amount) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="buttons">
+    <button id="pay" class="btn btn-primary">Payer la commande</button>
+    <button ><%= link_to 'Annuler', root_path %></button>
+
+    <!-- Script for stripe payment -->
+    <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
         paymentButton.addEventListener('click', () => {
@@ -15,7 +27,7 @@
             sessionId: '<%= @order.checkout_session_id %>'
           });
         });
-      </script> 
-    </div>
+      </script>
+
   </div>
 </div>

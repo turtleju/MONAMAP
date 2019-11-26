@@ -1,0 +1,25 @@
+.payment-container {
+    width: 800px;
+  }
+  
+.row{
+    display: grid;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 255, .2);
+    padding: 5px;
+    margin: auto;
+    //box-shadow:
+}
+
+.payment-category-list {
+    border: 1px solid #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-category-icone {
+    width: 25%;
+}
+
+.payment-options {
+    width: 60%;
+}
