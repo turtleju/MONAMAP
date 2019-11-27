@@ -10,7 +10,7 @@ class SubscriptionsController < ApplicationController
         lat: producer.latitude,
         lng: producer.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { producer: producer }),
-        image_url: helpers.asset_url('icon-flour.png')
+        image_url: helpers.asset_url('custom-pin.png')
       }
     end
   end
