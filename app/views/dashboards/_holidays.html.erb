@@ -1,0 +1,8 @@
+
+      <% if current_user.holidays.blank? %>
+        <p> Vous n'avez pas encore poser de vacances.</p>
+      <% else %>
+            <% current_user.holidays.each do | holiday| %>
+              <p> <%= holiday.begin %> - <%= holiday.end %></p>
+            <% end %>
+      <% end %>
