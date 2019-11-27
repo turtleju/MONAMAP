@@ -1,3 +1,12 @@
-<h2><%= producer.first_name %> <%= producer.last_name %></h2>
-<p><%= producer.address %></p>
-<p><%=  image_tag producer.photo_url %></p>
+<div class="info-window-photo" style="background-image: url(<%= image_path producer.photo_url, height: 150, width: 200, crop: :fill%>)">
+</div>
+
+<% producer.categories.each do |category| %>
+  <%=  image_tag category.photo, height: 35, width: 45, crop: :fill, class: 'category-photo' %>
+  <%=  category.name %>
+<% end %>
+
+  <p><strong><%= producer.first_name %> <%= producer.last_name %></strong></p>
+
+  <p><%= producer.description %></p>
+  <p><i><%= producer.address %></i></p>
