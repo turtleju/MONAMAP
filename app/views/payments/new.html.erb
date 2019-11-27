@@ -8,25 +8,31 @@
         <div class="payment-options">
           <h4> Category: <%= option.category.name %> </h4>
           <p>Option: <%= option.name %></p>
-          <p>Price : <%= humanized_money_with_symbol(@order.amount) %></p>
+          <p>Price : <%= humanized_money_with_symbol(option.price) %></p>
         </div>
       </div>
     <% end %>
   </div>
   <div class="buttons">
-    <button id="pay" class="btn btn-primary">Payer la commande</button>
+    <h4>Total annuel : <%= humanized_money_with_symbol(@order.amount)%></h4>
+    <button class="btn btn-primary pay">Payer en une fois</button>
+    <button class="btn btn-primary pay">Payer en plusieurs fois</button>
     <button ><%= link_to 'Annuler', root_path %></button>
 
     <!-- Script for stripe payment -->
     <script src="https://js.stripe.com/v3/"></script>
       <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @order.checkout_session_id %>'
+        const paymentButtons = document.querySelectorAll('.pay');
+        if (paymentButtons){
+        paymentButtons.forEach(paybutton => {
+          paybutton.addEventListener('click', () => {
+            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+            stripe.redirectToCheckout({
+              sessionId: '<%= @order.checkout_session_id %>'
+            });
           });
         });
+        };
       </script>
 
   </div>

@@ -36,7 +36,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def create_order_and_checkout_session
-    @order  = Order.create!(subscription_id: @subscription.id, amount_cents: @subscription.price_cents, state: 'pending')
+    @order  = Order.create!(subscription_id: @subscription.id, amount_cents: @subscription.price_cents * 12, state: 'pending')
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [
@@ -44,7 +44,7 @@ class SubscriptionsController < ApplicationController
       {
         name: "test",
         # images: [teddy.photo_url],
-        amount: @subscription.price_cents,
+        amount: @subscription.price_cents * 12,
         currency: 'eur',
         quantity: 1
         }],
