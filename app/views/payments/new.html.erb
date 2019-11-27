@@ -14,7 +14,7 @@
     <% end %>
   </div>
   <div class="buttons">
-    <h4>Total annuel : <%= humanized_money_with_symbol(@order.amount * 12)%></h4>
+    <h4>Total annuel : <%= humanized_money_with_symbol(@order.amount)%></h4>
     <button class="btn btn-primary pay">Payer en une fois</button>
     <button class="btn btn-primary pay">Payer en plusieurs fois</button>
     <button ><%= link_to 'Annuler', root_path %></button>
