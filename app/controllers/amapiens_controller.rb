@@ -10,7 +10,6 @@ class AmapiensController < ApplicationController
   end
 
   def update
-    # @gift = Gift.find(params[:gift])
     Gift.update(params[:gift], receiver: current_user)
     redirect_to dashboard_path
   end

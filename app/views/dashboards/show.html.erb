@@ -21,10 +21,15 @@
         <% end %>
       <% if current_user.received_gifts %>
         <% current_user.received_gifts.each do |gift| %>
+          <% if gift.date > Date.today %>
           <div class="week-cat-card">
+            <div class="avatar-category-week">
+              <%= image_tag gift.option.category.photo, alt:"category", width:54, height:54 %>
+            </div>
             <p class="cat-name"><span> <%= gift.option.category.name %> :</span></p>
             <p> <%= gift.option.content %> </p>
           </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
