@@ -1,53 +1,55 @@
 <h1>Choisissez vos produits et vos formules :</h1>
-
+<p class="subtitle">Les prix s'entendent TTC, par mois, pour un an d'adhésion.</p>
 <div class="wrapper">
   <div class="left-column">
     <%= simple_form_for :category, url: subscriptions_path, method: 'post' do |f| %>
 
-          <% @categories.each do |category| %>
+      <% @categories.each do |category| %>
 
-            <div class="subscription-category-card">
-                <h4><%= category.name %></h4>
-                <p><%= category.producer.description %></p>
-                  <%# <p>Légumes issus de l'agriculture en Biodynamie d'Adrien, à Curis-au-Mont d'Or.</p> %>
+    <div class="subscription-category-card">
+      <div class="category-inline">
+        <%= image_tag category.photo, width:54, height:54 %>
+        <h4><%= category.name %></h4>
+      </div>
+        <p><%= category.producer.description %></p>
+          <%# <p>Légumes issus de l'agriculture en Biodynamie d'Adrien, à Curis-au-Mont d'Or.</p> %>
 
-                  <div class="wrap-categories">
-                <% category.options.each do |option| %>
-                    <div class="subscriptions_target">
-                      <input id="<%= option.id %>" data-category="<%= option.category.name %>" data-price="<%= option.price %>" data-name="<%= option.name %>" class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]">
-                        <label for="<%= option.id %>"><%= option.name %> : <%= humanized_money_with_symbol(option.price)%></label>
-                    </div>
-                <% end %>
+      <div class="wrap-categories">
+        <% category.options.each do |option| %>
+          <div class="subscriptions_target">
+            <input id="<%= option.id %>" data-category="<%= option.category.name %>" data-price="<%= option.price %>" data-name="<%= option.name %>" class="script-selector" type="radio" value="<%= option.id %>" name="category[<%= category.id %>]">
+            <label for="<%= option.id %>"><%= option.name %> :<br> <%= humanized_money_with_symbol(option.price)%></label>
+          </div>
+        <% end %>
 
-            </div>
-                  </div>
-          <% end %>
-        <div class="options-submit">
-            <%= f.button :submit, value="Je valide mon adhésion!" %>
-        </div>
-    <% end %>
+      </div>
+    </div>
+        <% end %>
+    <div class="options-submit">
+      <%= f.button :submit, value="Je valide mon adhésion!" %>
+    </div>
+      <% end %>
   </div>
 
 
   <div class="right-column">
     <div class="sticky-card">
       <div class="total-card">
-        <p>Choisissez vos options pour voir votre total mensuel </p>
+ <!--        <p>Les formules sélectionnées </p> -->
         <div class="total-inline">
           <h2>Total mensuel:</h2>
           <h2>0 €</h2>
         </div>
       </div>
+            <div
+              id="map"
+              style="width: 100%;
+              height: 300px;
+              border-radius: 0px 0px 12px 12px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
     </div>
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
   </div>
-
-
 </div>
 
