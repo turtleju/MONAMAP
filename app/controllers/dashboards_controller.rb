@@ -2,20 +2,7 @@ class DashboardsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def show
-    # @gifts = Gift.where(receiver: current_user)
-    # @paid = "1375€"
-    # @next_payment = "04-12-2019"
-    # @end = "31-12-2019"
-
-    # @subscription = Subscription.find_by(user_id: 28)
-    # @subscription_options = SubscriptionOption.where(subscription_id: @subscription.id)
-    # @cart = []
-    # @options = []
-
-    # @subscription_options.each do |subscription_option|
-    #   @options << subscription_option.option
-    #   @cart << subscription_option.option.content
-    # end
+    @week_options = current_user.options.where.not(id: current_user.given_gifts.pluck(:option_id))
   end
 
   def holidays
