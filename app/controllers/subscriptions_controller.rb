@@ -8,10 +8,13 @@ class SubscriptionsController < ApplicationController
     @markers = @producers.map do |producer|
       {
         lat: producer.latitude,
-        lng: producer.longitude
+        lng: producer.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { producer: producer }),
+        image_url: helpers.asset_url('custom-pin.png')
       }
     end
   end
+
 
   def create
     @subscription = Subscription.create(user: current_user)
