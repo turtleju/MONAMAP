@@ -1,109 +1,107 @@
+<div class="container">
+  <div id="title-dasboard">
+    <h1>Cette semaine : distribution mercredi 4 décembre</h1>
+    <p>Lieu de distribution : 126 Rue du Pontet, 69250 Curis-au-Mont-d'Or</p>
+  </div>
 
-
-<div class="grid-alert">
-  <div class="distribution-card">
-      <% if Distribution.first.users.count < 10 %>
-        <h4>Il nous manque une personne pour la distribution de mercredi prochain, de 18h à 19h30 🙏</h4>
-            <%= button_to "J'y serai !", distribution_path, method: :put, :class => "cta" %>
-            <a href="#" class="cta">
-              <span>OK, je m'inscris !</span>
-              <svg width="13px" height="10px" viewBox="0 0 13 10">
-                <path d="M1,5 L11,5"></path>
-                <polyline points="8 1 12 5 8 9"></polyline>
-              </svg>
-            </a>
-<!--           <div class="ok-button">
-            <p>J'y serai !</p>
-          </div> -->
-        <% else  %>
-              <p>Vous êtes bien inscrit(e) à la distribution du 4 décembre, merci 🎉</p>
-      <% end %>
+<section class="weekly-basket-card">
+  <h4>Mon panier de la semaine</h4>
+    <div class="content-flex">
+      <% current_user.options.each do |option| %>
+      <div class="week-cat-card">
+        <p class="cat-name"><span> <%= option.category.name %> :</span></p>
+          <p> <%= option.content %> </p>
+      </div>
+        <% end %>
     </div>
+</section>
 
+<div class="distribution-card">
+  <div class="distribution-flex">
+    <% if Distribution.first.users.count < 10 %>
+      <p>Il nous manque une personne pour la distribution de mercredi prochain, de 18h à 19h30 🙏</p>
+          <%= button_to distribution_path, method: :put, class: 'cta' do %>
+            <span>J'y serai !</span>
+            <svg width="13px" height="10px" viewBox="0 0 13 10">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          <% end %>
+      <% else  %>
+            <p>Vous êtes bien inscrit(e) à la distribution du 4 décembre, merci 🎉</p>
+    <% end %>
+  </div>
+</div>
+
+<div class="recap-inline">
+  <section class="abonnement">
+    <h3>Mon abonnement</h3>
+    <p>Prend fin le 31 décembre 2019</p>
+
+    <% current_user.options.each do |option| %>
+
+    <div class="category-card">
+      <div class="inline">
+        <div class="avatar-category">
+        <%= image_tag option.category.photo, alt:"category", width:54, height:54 %>
+        </div>
+          <div class="text-card">
+            <div class="text-category">
+              <p class="category-name"><%= option.category.name %></p>
+              <p class="category-option"><%= option.name%></p>
+            </div>
+
+            <div class="price-category">
+              <p class="price"><%= option.price %> €</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+
+  </section>
+
+  <section class="payments">
+    <p>Mes règlements</p>
+      <h4>Premier paiement le 02 janvier 2019</h4>
+        <div class="inline inline-white">
+          <p>Montant mensuel</p>
+          <h4>101 €</h4>
+        </div>
+        <div class="inline inline-white">
+          <p>Montant annuel</p>
+          <h4>1212 €</h4>
+        </div>
+        <p>Date de paiement</p>
+          <h4>Le 6 de chaque mois</h4>
+        <p>Dernier paiement</p>
+          <h4>Le 6 décembre 2019</h4>
+        <p>Prochain paiement</p>
+          <h4>Les règlements pour l'année 2019 sont terminées</h4>
+  </section>
+
+  <section class="holidays">
     <div class="holidays-card">
       <div class="holidays-inline">
         <h4>Mes Vacances :</h4>
-        <input type="text" id="holidays-date" placeholder="Mes prochaines vacances!">
+          <input type="text" id="holidays-date" placeholder="Mes prochaines vacances!">
       </div>
       <span class="js-response-holidays">
           <p class="no-holidays">Vous avez encore 5 paniers vacances à nous confirmer !</p>
       </span>
     </div>
-
+  </section>
 </div>
 
-<div class="container">
-  <div class="wrap-dashboard">
-    <section class="abonnement">
-      <h3>Mon abonnement</h3>
-      <p>Prend fin le 31 décembre 2019</p>
-
-      <% current_user.options.each do |option| %>
-
-      <div class="category-card">
-        <div class="inline">
-          <div class="avatar-category">
-          <%= image_tag option.category.photo, alt:"category", width:54, height:54 %>
-          </div>
-            <div class="text-card">
-              <div class="text-category">
-                <p class="category-name"><%= option.category.name %></p>
-                <p class="category-option"><%= option.name%></p>
-              </div>
-
-              <div class="price-category">
-                <p class="price"><%= option.price %> €</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      <% end %>
-
-    </section>
-
-
-
-    <section class="events">
-
-      <div class="weekly-basket-card">
-        <h4>Mon panier de la semaine</h4>
-          <% current_user.options.each do |option| %>
-            <p class="cat-name"><span> <%= option.category.name %> :</span></p>
-              <p> <%= option.content %> </p>
-          <% end %>
-      </div>
-    </section>
-
-
-    <section class="payments">
-      <h3>Mes règlements</h3>
-        <p>Premier paiement le 02 janvier 2019</p>
-          <div class="inline inline-white">
-            <p>Montant mensuel</p>
-            <p>101 €</p>
-          </div>
-          <div class="inline inline-white">
-            <p>Montant annuel</p>
-            <p>1212 €</p>
-          </div>
-          <h4>Date de paiement</h4>
-          <p>Le 6 de chaque mois</p>
-          <h4>Dernier paiement</h4>
-          <p>Le 6 décembre 2019</p>
-          <h4>Prochain paiement</h4>
-          <p>Les règlements pour l'année 2019 sont terminées</p>
-    </section>
-
-    <section class="producers">
-      <h3>Nos producteurs :</h3>
-        <div class="inline-producers">
-          <div class="producer1"></div>
-            <div class="producer2"></div>
-              <div class="producer3"></div>
-            <div class="producer4"></div>
-          <div class="producer5"></div>
-        </div>
-    </section>
-  </div>
+<section class="producers">
+  <h3>Nos producteurs :</h3>
+    <div class="inline-producers">
+      <div class="producer1"></div>
+        <div class="producer2"></div>
+          <div class="producer3"></div>
+        <div class="producer4"></div>
+      <div class="producer5"></div>
+    </div>
+</section>
 </div>
