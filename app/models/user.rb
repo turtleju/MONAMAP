@@ -11,5 +11,7 @@ class User < ApplicationRecord
 
   has_many :holidays
   has_many :absences
+  has_many :received_gifts, foreign_key: :receiver_id, class_name: 'Gift'
+  has_many :given_gifts, foreign_key: :giver_id, class_name: 'Gift'
   belongs_to :distribution, optional: true
 end

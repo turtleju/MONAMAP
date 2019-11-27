@@ -2,7 +2,7 @@ class DashboardsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def show
-
+    # @gifts = Gift.where(receiver: current_user)
     # @paid = "1375€"
     # @next_payment = "04-12-2019"
     # @end = "31-12-2019"

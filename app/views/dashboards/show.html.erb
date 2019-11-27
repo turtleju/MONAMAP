@@ -70,7 +70,14 @@
         <h4>Mon panier de la semaine</h4>
           <% current_user.options.each do |option| %>
             <p class="cat-name"><span> <%= option.category.name %> :</span></p>
-              <p> <%= option.content %> </p>
+            <p> <%= option.content %> </p>
+            <button> <%= link_to 'Donner ce produit', amapiens_path(option: option.id), method: :post%> </button>
+          <% end %>
+          <% if current_user.received_gifts %>
+            <% current_user.received_gifts.each do |gift| %>
+              <p class="cat-name"><span> <%= gift.option.category.name %> :</span></p>
+              <p> <%= gift.option.content %> </p> 
+            <% end %>
           <% end %>
       </div>
     </section>
