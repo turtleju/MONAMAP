@@ -14,9 +14,9 @@
     margin: 0;
   }
 
-  div p {
-    width: 150px;
-    font-size: 24px;
+  p {
+    max-width: 390px;
+    margin-top: 4px;
   }
 }
 
@@ -60,7 +60,7 @@ h3 {
 
 .why-card {
   background-color: $my-white;
-  margin: 32px 64px 64px 32px;
+  margin: 32px 64px 150px 32px;
   padding: 24px;
   text-align: center;
   border-radius: $border-radius;
@@ -86,6 +86,7 @@ h3 {
 }
 
 .categories-home {
+  margin: 32px 64px 32px 32px;
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
   border-radius: $border-radius;

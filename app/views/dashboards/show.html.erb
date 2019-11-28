@@ -14,9 +14,15 @@
         <div class="avatar-category-week">
         <%= image_tag option.category.photo, alt:"category", width:54, height:54 %>
         </div>
-        <p class="cat-name"><span> <%= option.category.name %></span></p>
-          <p> <%= option.content %> </p>
-        <p class= "gift-button"> <%= link_to 'Donner ce produit', amapiens_path(option: option.id), method: :post%> </p>
+        <div class="space-cat">
+          <div class="text-cat">
+          <p class="cat-name"><span> <%= option.category.name %></span></p>
+            <p> <%= option.content %> </p>
+          </div>
+          <div class="button-space">
+            <p class= "gift-button"> <%= link_to 'Donner ce panier', amapiens_path(option: option.id), method: :post%> </p>
+          </div>
+        </div>
       </div>
         <% end %>
       <% if current_user.received_gifts %>
@@ -93,22 +99,22 @@
   </section>
 
   <section class="payments">
-    <p>Mes règlements</p>
-      <h4>Premier paiement le 02 janvier 2019</h4>
+    <h3>Mes règlements</h3>
+      <p>Premier paiement le 02 janvier 2019</p>
         <div class="inline inline-white">
-          <p>Montant mensuel</p>
-          <h4><%= (current_user.orders.last.amount / 12).to_i %> €</h4>
+          <h4>Montant mensuel</h4>
+          <div><p><%= (current_user.orders.last.amount / 12).to_i %> €</p></div>
         </div>
         <div class="inline inline-white">
-          <p>Montant annuel</p>
-          <h4><%= (current_user.orders.last.amount / 12).to_i %> €</h4>
+          <h4>Montant annuel</h4>
+          <p><%= (current_user.orders.last.amount / 12).to_i %> €</p>
         </div>
-        <p>Date de paiement</p>
-          <h4>Le 6 de chaque mois</h4>
-        <p>Dernier paiement</p>
-          <h4>Le 6 Novembre 2019</h4>
-        <p>Prochain paiement</p>
-          <h4>Le 6 Décmbre 2019</h4>
+        <h4>Date de paiement</h4>
+          <p>Le 6 de chaque mois</p>
+        <h4>Dernier paiement</h4>
+          <p>Le 6 Novembre 2019</p>
+        <h4>Prochain paiement</h4>
+          <p>Le 6 Décembre 2019</p>
   </section>
 
   <section class="holidays">
