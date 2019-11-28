@@ -14,7 +14,7 @@
         <div class="avatar-category-week">
         <%= image_tag option.category.photo, alt:"category", width:54, height:54 %>
         </div>
-        <p class="cat-name"><span> <%= option.category.name %> :</span></p>
+        <p class="cat-name"><span> <%= option.category.name %></span></p>
           <p> <%= option.content %> </p>
         <p class= "gift-button"> <%= link_to 'Donner ce produit', amapiens_path(option: option.id), method: :post%> </p>
       </div>
@@ -37,7 +37,7 @@
 
 <div class="distribution-card">
   <div class="distribution-flex">
-    <% if Distribution.first.users.count < 10 %>
+    <% if Distribution.first.users.count < 2 %>
       <p>Il nous manque une personne pour la distribution de mercredi prochain, de 18h à 19h30 🙏</p>
           <%= button_to distribution_path, method: :put, class: 'cta' do %>
             <span>J'y serai !</span>
@@ -47,7 +47,7 @@
             </svg>
           <% end %>
       <% else  %>
-            <p>Vous êtes bien inscrit(e) à la distribution du 4 décembre, merci 🎉</p>
+            <p class="distribution-ok">Vous êtes bien inscrit(e) à la distribution du 4 décembre, merci 🎉</p>
     <% end %>
   </div>
 </div>
