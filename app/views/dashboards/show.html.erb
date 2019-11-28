@@ -35,6 +35,17 @@
     </div>
 </section>
 
+<section class="producers">
+  <h3 class="producers-title">Nos producteurs :</h3>
+    <div class="inline-producers">
+        <%= link_to producer_path(@producer), class: "producer1" do  %><% end %>
+        <div class="producer2"></div>
+        <div class="producer3"></div>
+        <div class="producer4"></div>
+      <div class="producer5"></div>
+    </div>
+</section>
+
 <div class="distribution-card">
   <div class="distribution-flex">
     <% if Distribution.first.users.count < 2 %>
@@ -86,41 +97,32 @@
       <h4>Premier paiement le 02 janvier 2019</h4>
         <div class="inline inline-white">
           <p>Montant mensuel</p>
-          <h4>101 €</h4>
+          <h4><%= (current_user.orders.last.amount / 12).to_i %> €</h4>
         </div>
         <div class="inline inline-white">
           <p>Montant annuel</p>
-          <h4>1212 €</h4>
+          <h4><%= (current_user.orders.last.amount / 12).to_i %> €</h4>
         </div>
         <p>Date de paiement</p>
           <h4>Le 6 de chaque mois</h4>
         <p>Dernier paiement</p>
-          <h4>Le 6 décembre 2019</h4>
+          <h4>Le 6 Novembre 2019</h4>
         <p>Prochain paiement</p>
-          <h4>Les règlements pour l'année 2019 sont terminées</h4>
+          <h4>Le 6 Décmbre 2019</h4>
   </section>
 
   <section class="holidays">
     <div class="holidays-card">
       <div class="holidays-inline">
-        <h4>Mes Vacances :</h4>
-          <input type="text" id="holidays-date" placeholder="Mes prochaines vacances!">
+        <h4>Mes Vacances</h4>
       </div>
       <span class="js-response-holidays">
           <p class="no-holidays">Vous avez encore 5 paniers vacances à nous confirmer !</p>
       </span>
+      <input type="text" id="holidays-date" placeholder="Mes prochaines vacances!">
     </div>
   </section>
 </div>
 
-<section class="producers">
-  <h3>Nos producteurs :</h3>
-    <div class="inline-producers">
-        <%= link_to producer_path(@producer), class: "producer1" do  %><% end %>
-        <div class="producer2"></div>
-        <div class="producer3"></div>
-        <div class="producer4"></div>
-      <div class="producer5"></div>
-    </div>
-</section>
+
 </div>

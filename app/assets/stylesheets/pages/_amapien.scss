@@ -1,0 +1,49 @@
+.title-amapiens {
+    margin-bottom: 48px;
+    margin-left: 48px;
+  }
+
+  .payment-container {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+  }
+
+  .amapiens-category-list {
+    position: relative;
+    display: flex;
+    margin-left: 32px;
+    margin-right: 56px;
+    margin-bottom: 32px;
+    border: 2px solid $my-dark-blue;
+    border-radius: $border-radius;
+    background-color: $my-white;
+    padding: 8px;
+  }
+
+  .amapiens-category-icone {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+  }
+
+.amapiens-button {
+    position: absolute;
+    bottom: 10px;
+    right: -0px;
+    margin-right: 12px;
+    background-color:#e6f2f3;
+    box-shadow: 0 0.1875rem 0.3125rem 0 rgba(155,170,185,0.6);
+    border: none;
+    //transition: 0.2s background-color, 0.2s transform;
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.amapiens-gifts-content {
+   padding: 0 2px;
+}
+
+.back {
+  margin-left: 48px;
+}

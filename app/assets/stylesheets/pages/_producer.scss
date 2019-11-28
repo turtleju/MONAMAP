@@ -8,7 +8,7 @@
   background-image: asset-url('producer.jpg');
   background-size: 100% auto;
   margin: 50px auto;
-  border-radius: 20px;
+  border-radius: $border-radius;
   // margin-top: 50px;
   // margin-bottom: 50px;
   background-position: center;
@@ -16,6 +16,6 @@
 
 .producer-details {
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  border-radius: $border-radius;
   margin-bottom: 32px;
 }

@@ -1,21 +1,23 @@
-<div>
-  <h3>Les gifts de la semaine</h3>
+<h1 class="title-amapiens">Les paniers mis à votre disposition par les autres amapiens :</h1>
+<div class="right-col-cat">
   <% @gifts.each do |gift| %>
-    <div>
-        <div>
+    <div class="amapiens-category-list">
+        <div class="amapiens-category-icone">
             <%= image_tag gift.option.category.photo, width: '80px', height: '80px' %>
         </div>
-        <div>
+        <div class="amapiens-gift-content">
             <p>Contenu du panier: <%= gift.option.content  %></p>
-            <p><%= gift.giver.email %></p>
-        </div>
-        <div>
-            <% if gift.giver == current_user %>
-                <p><%= link_to 'Je prends', amapiens_path(gift: gift.id), method: :patch %></p>
+            <% if gift.giver.first_name %>
+                <p>De la part de : <%= gift.giver.first_name %></p>
+            <% else %>
+                <p>Vous venez de laisser ces produits</p>
             <% end %>
         </div>
+        <% if gift.giver != current_user %>
+            <button class="amapiens-button"><%= link_to 'Ca me ferait plaisir! :)', amapiens_path(gift: gift.id), method: :patch %></button>
+        <% end %>
     </div>
   <% end %>
-  <p><%= link_to "Retour à l'Accueil", dashboard_path %></p>
 
 </div>
+  <p class="back"><%= link_to "Retour à l'Accueil", dashboard_path %></p>
