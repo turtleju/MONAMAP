@@ -1,24 +1,29 @@
+<h1 class="title-basket">Votre adhésion pour cette année :</h1>
 <div class= "payment-container">
-  <div class= "row">
+  <div class="right-col-cat">
     <% @order.options.each do |option| %>
       <div class="payment-category-list">
         <div class="payment-category-icone">
           <%= image_tag option.category.photo, width: '80px', height: '80px' %>
         </div>
         <div class="payment-options">
-          <h4> Category: <%= option.category.name %> </h4>
-          <p>Option: <%= option.name %></p>
-          <p>Price : <%= humanized_money_with_symbol(option.price) %></p>
+          <h4><%= option.category.name %> </h4>
+          <p>Formule : <%= option.name %></p>
+          <p class="price-option"><%= humanized_money_with_symbol(option.price) %></p>
         </div>
       </div>
     <% end %>
   </div>
-  <div class="buttons">
-    <h4>Total annuel : <%= humanized_money_with_symbol(@order.amount)%></h4>
-    <button class="btn btn-primary pay">Payer en une fois</button>
-    <button class="btn btn-primary pay">Payer en plusieurs fois</button>
-    <button ><%= link_to 'Annuler', root_path %></button>
-
+  <div class="left-col-pay">
+    <div class="module-pay">
+      <div class="buttons">
+        <h4>Total annuel : <%= humanized_money_with_symbol(@order.amount)%></h4>
+        <button class="btn btn-primary pay-one pay">Payez en une fois</button>
+        <h4>Total mensuel : <%= humanized_money_with_symbol(@order.amount/12)%></h4>
+        <button class="btn btn-primary pay-several pay">Payez chaque mois</button>
+        <div class="abort" ><%= link_to 'Annuler', new_subscription_path %></div>
+      </div>
+    </div>
     <!-- Script for stripe payment -->
     <script src="https://js.stripe.com/v3/"></script>
       <script>
