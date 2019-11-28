@@ -12,6 +12,7 @@ Producer.destroy_all
 User.destroy_all
 Distribution.destroy_all
 
+
 distribution = Distribution.create!(
   date:"3/12/2019"
   )
@@ -133,6 +134,24 @@ user4 = User.create!(
   password: "azerty",
   photo_url: "http://amap-moreuil.fr/wp-content/uploads/2015/02/Distribution2015-4-225x300.jpg",
   distribution_id: distribution.id
+  )
+
+gift1 = Gift.create!(
+  date: "03/12/19"
+  option_id: Option.all.sample.id
+  giver_id: user2.id
+  )
+
+gift2 = Gift.create!(
+  date: "03/12/19"
+  option_id: Option.all.sample.id
+  giver_id: user3.id
+  )
+
+gift3 = Gift.create!(
+  date: "03/12/19"
+  option_id: Option.all.sample.id
+  giver_id: user4.id
   )
 
 vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer, photo: "icon-vegetables.png")
