@@ -86,18 +86,18 @@
       <h4>Premier paiement le 02 janvier 2019</h4>
         <div class="inline inline-white">
           <p>Montant mensuel</p>
-          <h4>101 €</h4>
+          <h4><%= (current_user.orders.last.amount / 12).to_i %> €</h4>
         </div>
         <div class="inline inline-white">
           <p>Montant annuel</p>
-          <h4>1212 €</h4>
+          <h4><%= (current_user.orders.last.amount / 12).to_i %> €</h4>
         </div>
         <p>Date de paiement</p>
           <h4>Le 6 de chaque mois</h4>
         <p>Dernier paiement</p>
-          <h4>Le 6 décembre 2019</h4>
+          <h4>Le 6 Novembre 2019</h4>
         <p>Prochain paiement</p>
-          <h4>Les règlements pour l'année 2019 sont terminées</h4>
+          <h4>Le 6 Décmbre 2019</h4>
   </section>
 
   <section class="holidays">
