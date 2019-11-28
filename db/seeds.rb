@@ -215,8 +215,7 @@ Option.create!(
 #   name:"panier MÉLI-MÉLO",
 #   price:"10",
 #   category: eggs_category,
-#   content: "12 oeufs"
-  )
+#   content: "12 oeufs")
 Option.create!(
   name:"panier DUO",
   price:"3",
@@ -253,8 +252,7 @@ Option.create!(
 #   name:"panier MÉLI-MÉLO",
 #   price:"5",
 #   category: flour_category,
-#   content:"500g de farine des Monts-d’or"
-  )
+#   content:"500g de farine des Monts-d’or")
 Option.create!(
   name:"panier DUO",
   price:"20",
@@ -313,8 +311,7 @@ Option.create!(
 #   name:"panier MÉLI-MÉLO",
 #   price:"20",
 #   category: pork_category,
-#   content:"4 tranches de jambon,4 échines de porc, 4 filets mignons "
-  )
+#   content:"4 tranches de jambon,4 échines de porc, 4 filets mignons ")
 Option.create!(
   name:"panier DUO",
   price:"25",
