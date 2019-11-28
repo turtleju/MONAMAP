@@ -5,17 +5,29 @@ h1 {
   margin-bottom: 0px;
 }
 
+.subtitle {
+  margin-bottom: 16px;
+}
+
+.formule {
+  display: flex;
+  p {
+    margin-left: 8px;
+  }
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 40px;
+  margin-top: 50px;
 }
 
 .subscription-category-card {
   position: relative;
   // z-index: -200;
   height: auto;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 
   background: #FFFFFF;
   border: 2px solid #6AA1AD;
@@ -23,6 +35,9 @@ h1 {
   border-radius: 12px;
   padding: 8px;
   box-shadow: 0px 2px 10px rgba(164, 160, 160, 0.17);
+  p {
+    margin-left: 32px;
+  }
 }
 
 .category-inline {
@@ -30,6 +45,7 @@ h1 {
   align-items: center;
   img {
   margin-right: 8px;
+  margin-left: 32px;
   }
 }
 
@@ -78,12 +94,14 @@ input[type=radio]:active + label {
   background-color: $my-median-blue;
   width: 300px;
   text-align: center;
-  margin-bottom: 25px;
+  margin: 70px auto;
   box-shadow: 0px 2px 10px rgba(164, 160, 160, 0.17);
+  transition: all 0.3s ease;
 }
 
 .options-submit:hover {
   background-color: $my-dark-blue;
+  transform: scale(1.05);
 }
 
 .subscriptions_target {
@@ -98,10 +116,10 @@ input[type=radio]:active + label {
 
 .total-card {
   height: auto;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
   background: #fef5e1;
   box-sizing: border-box;
-  border-radius: 12px;
+  border-radius: 12px 12px 0px 0px;
   padding: 0px;
   p {
     padding: 8px;
