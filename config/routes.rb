@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show
   resources :subscriptions, only: [:new, :create]
   resources :payments, only: :new
+  get "producer/:id", to: "producers#show"
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
   put '/add_user_to_distrib', to: 'dashboards#add_user_to_distrib', as: :distribution

@@ -1,5 +1,19 @@
 <h1>Choisissez vos produits et vos formules :</h1>
 <p class="subtitle">Les prix s'entendent TTC, par mois, pour un an d'adhésion.</p>
+  <div class="formule">
+    <h5>DUO</h5>
+    <p>Pour 2 personnes</p>
+  </div>
+  <div class="formule">
+    <h5>FAMILLE</h5>
+    <p>Pour un couple avec 2 enfants</p>
+  </div>
+  <div class="formule">
+    <h5>MÉLI-MÉLO</h5>
+    <p>DUO l'hiver, FAMILLE l'été</p>
+  </div>
+
+
 <div class="wrapper">
   <div class="left-column">
     <%= simple_form_for :category, url: subscriptions_path, method: 'post' do |f| %>
