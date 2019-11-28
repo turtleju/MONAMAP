@@ -3,6 +3,7 @@ class DashboardsController < ApplicationController
 
   def show
     @week_options = current_user.options.where.not(id: current_user.given_gifts.pluck(:option_id))
+    @producer = Producer.first
   end
 
   def holidays
