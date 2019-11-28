@@ -13,7 +13,7 @@ const total = () => {
         total_card.insertAdjacentHTML('afterbegin',`<p>${input.dataset.category}</p>`);
         price += parseFloat(input.dataset.price);
       });
-      const prixtotal = `<div class="total-inline"> <h2>Total :</h2> <h2>${price} €</h2></div>`;
+      const prixtotal = `<div class="total-inline"> <h3>Total mensuel :</h3> <h3>${price} €</h3></div>`;
 
       total_card.insertAdjacentHTML('beforeend', prixtotal);
     });

@@ -42,10 +42,11 @@ class SubscriptionsController < ApplicationController
     @order  = Order.create!(subscription_id: @subscription.id, amount_cents: @subscription.price_cents * 12, state: 'pending')
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
+      customer_email: current_user.email,
       line_items: [
        #options.each
       {
-        name: "test",
+        name: "Paiement de votre aboonement",
         # images: [teddy.photo_url],
         amount: @subscription.price_cents * 12,
         currency: 'eur',
