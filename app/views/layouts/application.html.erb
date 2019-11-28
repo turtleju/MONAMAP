@@ -8,18 +8,24 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- pages application.scss --------  Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <%= favicon_link_tag asset_path('favicon.ico') %>
+     <%= favicon_link_tag asset_path('favicon.ico') %>
 
   </head>
   <body>
     <%= render 'shared/navbar' %>
+
     <div class="container">
-      <%= render 'shared/flashes' %>
-      <%= yield %>
-      <%= javascript_include_tag 'application' %>
-      <%= javascript_pack_tag 'application' %>
+      <div class="main">
+        <%= render 'shared/flashes' %>
+
+        <%= yield %>
+      </div>
     </div>
+
+    <%= render 'shared/footer' %>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
   </body>
-      <%= render 'shared/footer' %>
 </html>
 

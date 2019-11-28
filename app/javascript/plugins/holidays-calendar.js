@@ -5,14 +5,14 @@ require("flatpickr/dist/themes/confetti.css");
 
 
 const initFlatpickr = () => {
-  console.log("je suis dans initFlatpickr")
-  console.log(document.querySelector('#holidays-date'))
+  // console.log("je suis dans initFlatpickr")
+  // console.log(document.querySelector('#holidays-date'))
   flatpickr("#holidays-date", {
     mode: "range",
     minDate: "today",
     dateFormat: "d/m/y",
     onClose: function(selectedDates, dateStr, instance) {
-      console.log('onclose')
+      // console.log('onclose')
       // console.log(selectedDates)
       fetch('/holidays', {
         method: 'POST',

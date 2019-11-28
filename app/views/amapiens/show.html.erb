@@ -1,0 +1,21 @@
+<div>
+  <h3>Les gifts de la semaine</h3>
+  <% @gifts.each do |gift| %>
+    <div>
+        <div>
+            <%= image_tag gift.option.category.photo, width: '80px', height: '80px' %>
+        </div>
+        <div>
+            <p>Contenu du panier: <%= gift.option.content  %></p>
+            <p><%= gift.giver.email %></p>
+        </div>
+        <div>
+            <% if gift.giver == current_user %>
+                <p><%= link_to 'Je prends', amapiens_path(gift: gift.id), method: :patch %></p>
+            <% end %>
+        </div>
+    </div>
+  <% end %>
+  <p><%= link_to "Retour à l'Accueil", dashboard_path %></p>
+
+</div>
