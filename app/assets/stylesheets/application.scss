@@ -19,3 +19,6 @@
 @import "components/navbar";
 @import "components/form";
 
+.main {
+  min-height: calc(100vh - 200px);
+}

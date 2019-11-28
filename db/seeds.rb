@@ -1,5 +1,6 @@
 puts 'SEED START'
 
+Gift.destroy_all
 Order.destroy_all
 Holiday.destroy_all
 Absence.destroy_all

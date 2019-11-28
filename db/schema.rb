@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_112652) do
+ActiveRecord::Schema.define(version: 2019_11_27_095635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(version: 2019_11_26_112652) do
     t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "gifts", force: :cascade do |t|
+    t.date "date"
+    t.bigint "option_id"
+    t.bigint "giver_id"
+    t.bigint "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["giver_id"], name: "index_gifts_on_giver_id"
+    t.index ["option_id"], name: "index_gifts_on_option_id"
+    t.index ["receiver_id"], name: "index_gifts_on_receiver_id"
   end
 
   create_table "holidays", force: :cascade do |t|
@@ -120,6 +132,9 @@ ActiveRecord::Schema.define(version: 2019_11_26_112652) do
 
   add_foreign_key "absences", "users"
   add_foreign_key "categories", "producers"
+  add_foreign_key "gifts", "options"
+  add_foreign_key "gifts", "users", column: "giver_id"
+  add_foreign_key "gifts", "users", column: "receiver_id"
   add_foreign_key "holidays", "users"
   add_foreign_key "options", "categories"
   add_foreign_key "orders", "subscriptions"
