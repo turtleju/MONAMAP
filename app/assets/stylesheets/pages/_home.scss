@@ -21,7 +21,7 @@
 }
 
 .subscribe-button {
-    border-radius: 10px;
+    border-radius: $border-radius;
     background: $my-dark-yellow;
     box-shadow: 0 0.1875rem 0.3125rem 0 rgba(155,170,185,0.6);
     color: #fff;
@@ -68,11 +68,11 @@ h3 {
 .categories-home {
   background-color: rgba(255, 255, 255, 0.5);
   text-align: center;
-  border-radius: 10px;
+  border-radius: $border-radius;
   transition: all 0.3s ease;
   text-decoration: none;
   text-align: center;
-  border-radius: 10px;
+  border-radius: $border-radius;
   box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 

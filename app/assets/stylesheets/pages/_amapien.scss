@@ -2,12 +2,12 @@
     margin-bottom: 48px;
     margin-left: 48px;
   }
-  
+
   .payment-container {
     display: grid;
     grid-template-columns: 1fr 0.7fr;
   }
-  
+
   .amapiens-category-list {
     position: relative;
     display: flex;
@@ -15,11 +15,11 @@
     margin-right: 56px;
     margin-bottom: 32px;
     border: 2px solid $my-dark-blue;
-    border-radius: 12px;
+    border-radius: $border-radius;
     background-color: $my-white;
     padding: 8px;
   }
-  
+
   .amapiens-category-icone {
     display: flex;
     align-items: center;
