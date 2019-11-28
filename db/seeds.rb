@@ -136,23 +136,6 @@ user4 = User.create!(
   distribution_id: distribution.id
   )
 
-gift1 = Gift.create!(
-  date: "03/12/19"
-  option_id: Option.all.sample.id
-  giver_id: user2.id
-  )
-
-gift2 = Gift.create!(
-  date: "03/12/19"
-  option_id: Option.all.sample.id
-  giver_id: user3.id
-  )
-
-gift3 = Gift.create!(
-  date: "03/12/19"
-  option_id: Option.all.sample.id
-  giver_id: user4.id
-  )
 
 vegetables_category = Category.create!(name: "Légumes BIO", producer: vegetables_producer, photo: "icon-vegetables.png")
 fruits_category = Category.create!(name: "Fruits", producer: fruits_producer, photo: "icon-fruits.png")
@@ -349,7 +332,24 @@ Option.create!(
   price:"30",
   category: beef_category,
   content:"2 côtes de boeufs, 2 tournedos , 2 entrecôtes "
+  )
 
+gift1 = Gift.create!(
+  date: "03/12/19",
+  option_id: Option.all.sample.id,
+  giver_id: user2.id
+  )
+
+gift2 = Gift.create!(
+  date: "03/12/19",
+  option_id: Option.all.sample.id,
+  giver_id: user3.id
+  )
+
+gift3 = Gift.create!(
+  date: "03/12/19",
+  option_id: Option.all.sample.id,
+  giver_id: user4.id
   )
 
 Subscription.create!(
