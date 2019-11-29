@@ -113,7 +113,7 @@ user1 = User.create!(
   first_name: "Lea",
   last_name: "FARMER",
   address: "Les Colverts, Birieux",
-  email: "lea@example.com",
+  email: "lea@outlook.com",
   password: "azerty",
   photo_url: "https://file1.grazia.fr/var/grazia/storage/images/media/images/societe/les-fermieres-a-ny/annie-novak-31-ans-fermiere-depuis-dix-ans.-greenpoint/12172924-1-fre-FR/Annie-Novak-31-ans-fermiere-depuis-dix-ans.-Greenpoint_width1024.jpg"
   )
@@ -122,7 +122,7 @@ user2 = User.create!(
   first_name: "Maia",
   last_name: "GARDEN",
   address: "Saint-Cyr-au-Mont-d'Or",
-  email: "maia@example.com",
+  email: "maia@gmail.com",
   password: "azerty",
   photo_url: "https://ichef.bbci.co.uk/news/660/cpsprodpb/2BCE/production/_108541211_maria4.jpg",
   distribution_id: distribution.id
@@ -132,7 +132,7 @@ user3 = User.create!(
   first_name: "Patrice",
   last_name: "LETTU",
   address: "Dardilly",
-  email: "patrice@example.com",
+  email: "patrice@gmail.com",
   password: "azerty",
   photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV5db8vVX3WO6xljRjryKbf9oZDf2f_IRE7HPN4vMf8TX3zkFkGQ&s",
   distribution_id: distribution.id
@@ -142,7 +142,7 @@ user4 = User.create!(
   first_name: "Laure",
   last_name: "GRASSE",
   address: "Anse",
-  email: "laure@example.com",
+  email: "laure@outlook.com",
   password: "azerty",
   photo_url: "http://amap-moreuil.fr/wp-content/uploads/2015/02/Distribution2015-4-225x300.jpg",
   distribution_id: distribution.id
@@ -344,19 +344,19 @@ Option.create!(
   )
 
 gift1 = Gift.create!(
-  date: "03/12/19",
+  date: "03/12/2019",
   option_id: Option.all.sample.id,
   giver_id: user2.id
   )
 
 gift2 = Gift.create!(
-  date: "03/12/19",
+  date: "03/12/2019",
   option_id: Option.all.sample.id,
   giver_id: user3.id
   )
 
 gift3 = Gift.create!(
-  date: "03/12/19",
+  date: "03/12/2019",
   option_id: Option.all.sample.id,
   giver_id: user4.id
   )
