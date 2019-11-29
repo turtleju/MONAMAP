@@ -14,7 +14,7 @@
             <% end %>
         </div>
         <% if gift.giver != current_user %>
-            <button class="amapiens-button"><%= link_to 'Ca me ferait plaisir! :)', amapiens_path(gift: gift.id), method: :patch %></button>
+            <button class="amapiens-button"><%= link_to 'Echanger avec celui-ci', amapiens_path(gift: gift.id), method: :patch %></button>
         <% end %>
     </div>
   <% end %>
