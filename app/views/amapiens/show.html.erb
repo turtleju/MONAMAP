@@ -7,10 +7,10 @@
         </div>
         <div class="amapiens-gift-content">
             <p>Contenu du panier: <%= gift.option.content  %></p>
-            <% if gift.giver.first_name %>
-                <p>De la part de : <%= gift.giver.first_name %></p>
-            <% else %>
+            <% if gift.giver.first_name.nil? %>
                 <p>Vous venez de laisser ces produits</p>
+            <% else %>
+                <p>De la part de : <%= gift.giver.first_name %></p>
             <% end %>
         </div>
         <% if gift.giver != current_user %>
