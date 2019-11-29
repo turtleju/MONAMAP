@@ -19,5 +19,6 @@ class DashboardsController < ApplicationController
 
   def add_user_to_distrib
     current_user.update(distribution_id: Distribution.first.id)
+    redirect_to dashboard_path
   end
 end
