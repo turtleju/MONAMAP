@@ -29,11 +29,18 @@
         <% current_user.received_gifts.each do |gift| %>
           <% if gift.date > Date.today %>
           <div class="week-cat-card">
-            <div class="avatar-category-week">
-              <%= image_tag gift.option.category.photo, alt:"category", width:54, height:54 %>
+              <div class="avatar-category-week">
+                <%= image_tag gift.option.category.photo, alt:"category", width:54, height:54 %>
+              </div>
+              <div class="space-cat">
+                <div class="text-cat">
+                  <p class="cat-name"><span> <%= gift.option.category.name %> :</span></p>
+                    <p> <%= gift.option.content %> </p>
+                </div>
+              <div class="button-space">
+                <p class= "gift-button-received">Panier reçu!</p>
+              </div>
             </div>
-            <p class="cat-name"><span> <%= gift.option.category.name %> :</span></p>
-            <p> <%= gift.option.content %> </p>
           </div>
           <% end %>
         <% end %>
