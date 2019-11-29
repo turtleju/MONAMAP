@@ -110,11 +110,15 @@
       <p>Premier paiement le 02 janvier 2019</p>
         <div class="inline inline-white">
           <h4>Montant mensuel</h4>
-          <div><p><%= (current_user.orders.last.amount / 12).to_i %> €</p></div>
+          <% if current_user.orders.last.amount %>
+            <p><%= (current_user.orders.last.amount / 12).to_i %> €</p>
+          <% end %>
         </div>
         <div class="inline inline-white">
           <h4>Montant annuel</h4>
-          <p><%= (current_user.orders.last.amount / 12).to_i %> €</p>
+          <% if current_user.orders.last.amount %>
+            <p><%= (current_user.orders.last.amount).to_i %> €</p>
+          <% end %>
         </div>
         <h4>Date de paiement</h4>
           <p>Le 6 de chaque mois</p>
