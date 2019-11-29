@@ -34,9 +34,13 @@
     background-color:#e6f2f3;
     box-shadow: 0 0.1875rem 0.3125rem 0 rgba(155,170,185,0.6);
     border: none;
+    a {
+      text-decoration: none;
+    }
     //transition: 0.2s background-color, 0.2s transform;
     a:hover {
         text-decoration: none;
+        color: $my-black;
     }
 }
 

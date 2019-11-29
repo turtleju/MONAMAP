@@ -41,6 +41,8 @@ a {
   width: 230px;
   background-color: $my-white;
   border-radius: $border-radius;
+  margin-right: 8px;
+  margin-right: 8px;
   box-shadow: 0px 2px 10px rgba(164, 160, 160, 0.3);
   padding: 0px;
   p {
@@ -103,6 +105,20 @@ a {
 .gift-button:hover {
   transform: scale(1.03);
   background-color: $my-median-blue;
+}
+
+.gift-button-received {
+  background-color: $my-dark-yellow;
+  border-radius: $border-radius;
+  padding: 12px 10px;
+  text-align: center;
+  margin: 15px auto;
+  font-size: 14px;
+  width: 90%;
+  transition: all 0.3s ease;
+  a {
+    color: white;
+  }
 }
 
 //WEEKLY-BASKET -------------------- End

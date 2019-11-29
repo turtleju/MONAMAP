@@ -20,7 +20,7 @@ const initFlatpickr = () => {
         headers: { 'Content-Type': 'application/json' }
       })
       .then(response => response.text())
-      .then(data => { document.querySelector(".js-response-holidays").innerHTML = data })
+      .then(data => { document.querySelector(".js-response-holidays").innerHTML = `Vos paniers vacances : ${data}` })
     }
   });
 }

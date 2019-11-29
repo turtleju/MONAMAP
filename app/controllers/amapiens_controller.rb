@@ -1,8 +1,8 @@
 class AmapiensController < ApplicationController
   def show
-    @gifts = Gift.all
+    @gifts = Gift.where('date > ?', DateTime.current)
   end
-  
+
   def create
     @option = Option.find(params[:option])
     @gift = Gift.create!(option: @option, giver: current_user, date: date_of_next("Wednesday"))
@@ -21,5 +21,4 @@ class AmapiensController < ApplicationController
     delta = date > Date.today ? 0 : 7
     date + delta
   end
-
 end
