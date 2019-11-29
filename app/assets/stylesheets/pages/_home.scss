@@ -60,6 +60,7 @@ h3 {
 
 .why-card {
   background-color: $my-white;
+  border: 2px solid $my-median-blue;
   margin: 32px 64px 150px 32px;
   padding: 24px;
   text-align: center;
@@ -67,6 +68,11 @@ h3 {
   transition: all 0.3s ease;
   p {
     margin-bottom: 0px;
+  }
+  img {
+    width: 96px;
+    height: 96px;
+    margin: 16px;
   }
 }
 
@@ -99,4 +105,10 @@ h3 {
 
 .categories-home:hover {
     transform: scale(1.15);
+}
+
+.last-text {
+  font-family: $light-font;
+  text-align: center;
+  margin-bottom: 130px;
 }
