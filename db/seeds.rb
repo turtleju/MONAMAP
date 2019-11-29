@@ -437,8 +437,8 @@ Absence.create!(
   user_id:User.last.id
   )
 
-Distribution.create!(
-  date: "03/12/19"
-  )
+# Distribution.create!(
+#   date: "03/12/19"
+#   )
 
 puts 'SEED OK'
