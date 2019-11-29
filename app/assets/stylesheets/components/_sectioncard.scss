@@ -38,7 +38,7 @@ a {
 .week-cat-card {
   display: flex;
   flex-direction: column;
-  width: 230px;
+  width: 200px;
   background-color: $my-white;
   border-radius: $border-radius;
   margin-right: 8px;
@@ -158,6 +158,10 @@ a {
   padding: 16px 0px;
   transition: all 0.2s ease;
 }
+.cta:focus {
+  outline: none;
+}
+
 .cta:before {
   content: "";
   position: absolute;

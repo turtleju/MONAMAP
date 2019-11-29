@@ -61,7 +61,7 @@
 
 <div class="distribution-card">
   <div class="distribution-flex">
-    <% if Distribution.first.users.count < 10 %>
+    <% if Distribution.first.users.count < 2 %>
       <p>Il nous manque une personne pour la distribution de mercredi prochain, de 18h à 19h30 🙏</p>
           <%= button_to distribution_path, method: :put, class: 'cta' do %>
             <span>J'y serai !</span>
