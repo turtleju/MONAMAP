@@ -48,7 +48,7 @@ class SubscriptionsController < ApplicationController
       {
         name: "Paiement de votre aboonement",
         # images: [teddy.photo_url],
-        amount: @subscription.price_cents * 12,
+        amount: @subscription.price_cents,
         currency: 'eur',
         quantity: 1
         }],
