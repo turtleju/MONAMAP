@@ -11,7 +11,7 @@
   padding: 130px 0;
   margin-bottom: 40px;
   h1 {
-    margin: 0;
+    margin: -12px 0px 0px 0px;
   }
 
   p {
@@ -83,7 +83,7 @@ h3 {
 .categories-inline {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 0px;
   img {
     width: 96px;
     height: 96px;
@@ -93,7 +93,8 @@ h3 {
 
 .categories-home {
   margin: 32px 64px 32px 32px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: $my-white;
+  border: 2px solid $my-dark-yellow;
   text-align: center;
   border-radius: $border-radius;
   transition: all 0.3s ease;
@@ -111,4 +112,5 @@ h3 {
   font-family: $light-font;
   text-align: center;
   margin-bottom: 130px;
+  margin-top: 70px;
 }

@@ -165,31 +165,26 @@ Option.create!(
   name:"panier DUO",
   price:"11",
   category: vegetables_category,
-  content: "Légumes d'hiver : 500g de carottes,  4 poireaux, 1kg de pomme de terre, et 300g d'oignon "
-  )
-Option.create!(
-  name:"panier FAMILLE",
-  price:"19",
-  category: vegetables_category,
-  content: " Légumes d'hiver : 1kg de carotte,  8 poireaux, 2 kg de pomme de terre, et 600g d'oignon "
+  content: "Légumes d'hiver : 500g de chou rouge,  4 poireaux, 1kg de navets, et 300g de salsifis "
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"15",
   category: vegetables_category,
-  content: "Légumes d'hiver : 700g de carotte,  6 poireaux, 1,5 kg de pomme de terre, et 400g d'oignon "
+  content: "Légumes d'hiver : 700g de chou rouge,  6 poireaux, 1,5 kg de navets, et 400g de salsifis "
   )
+Option.create!(
+  name:"panier FAMILLE",
+  price:"19",
+  category: vegetables_category,
+  content: " Légumes d'hiver : 1kg de chou rouge,  8 poireaux, 2 kg de navets, et 600g de salsifis "
+  )
+
 Option.create!(
   name:"panier DUO",
   price:"12",
   category: fruits_category,
   content: "500g d'orange, 500g de pomme, 5 kiwis "
-  )
-Option.create!(
-  name:"panier FAMILLE",
-  price:"21",
-  category: fruits_category,
-  content: "1kg d'orange, 1kg de pomme, 10 kiwis"
   )
 Option.create!(
   name:"panier MÉLI-MÉLO",
@@ -198,22 +193,29 @@ Option.create!(
   content: "700g d'oranges, 700g de pommes, 7 kiwis"
   )
 Option.create!(
+  name:"panier FAMILLE",
+  price:"21",
+  category: fruits_category,
+  content: "1kg d'orange, 1kg de pomme, 10 kiwis"
+  )
+
+Option.create!(
   name:"panier DUO",
   price:"24",
   category: cheese_category,
   content: "1 panier fromages (2 Mont-d'or de 500g, 2 buches de chèvre et 2 crottins) "
   )
 Option.create!(
-  name:"panier FAMILLE",
-  price:"42",
-  category: cheese_category,
-  content: "2 paniers fromages (4 Mont-d'or de 500g , 4 buches de chèvre et 6 crottins)"
-  )
-Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"35",
   category: cheese_category,
   content: "2 panier fromages (3 Mont-d'or de 500g , 3 buches de chèvre et 4 crottins)"
+  )
+Option.create!(
+  name:"panier FAMILLE",
+  price:"42",
+  category: cheese_category,
+  content: "2 paniers fromages (4 Mont-d'or de 500g , 4 buches de chèvre et 6 crottins)"
   )
 # Option.create!(
 #   name:"panier DUO",
@@ -239,17 +241,16 @@ Option.create!(
   content: "1 Pain Délices (Raisin-amande, Abricot-noisette ou Figues-noix), 4 baguettes tradition"
   )
 Option.create!(
-  name:"panier FAMILLE",
-  price:"10",
-  category: bread_category,
-  content: "2 pains de campagne (farine semi complète), 1 pain aux graines (tournelin ou multigraines)"
-
-  )
-Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"8",
   category: bread_category,
   content: "3 baguettes tradition, 2 baguettes à la farine de sarrazin "
+  )
+Option.create!(
+  name:"panier FAMILLE",
+  price:"10",
+  category: bread_category,
+  content: "2 pains de campagne (farine semi complète), 1 pain aux graines (tournelin ou multigraines)"
   )
 
 # Option.create!(
@@ -277,18 +278,18 @@ Option.create!(
            Colis de volaille pouvant se composer selon fabrication de saucisses de volaille, saucisson à cuire, terrine, chair à farcir etc…"
   )
 Option.create!(
-  name:"panier FAMILLE",
-  price:"38",
-  category: chicken_category,
-  content:"1 colis de découpe poulet (4 cuisses, et 2 filets)
-           Colis de volaille pouvant se composer selon fabrication de saucisses de volaille, saucisson à cuire, terrine, chair à farcir etc…"
-  )
-Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"30",
   category: chicken_category,
   content:"1 colis de découpe poulet (4 cuisses, et 2 filets)
-           Colis de volaille pouvant se composer selon fabrication de saucisses de volaille, saucisson à cuire, terrine, chair à farcir etc…"
+           1 volaille entière d'1,5kg"
+  )
+Option.create!(
+  name:"panier FAMILLE",
+  price:"38",
+  category: chicken_category,
+  content:"1 colis de découpe poulet (4 cuisses, et 2 filets)
+           1 volaille entière de 2,5kg"
   )
 # Option.create!(
 #   name:"panier DUO",
@@ -316,16 +317,17 @@ Option.create!(
   content:"2 tranches de jambon, 2 échines de porc"
   )
 Option.create!(
+  name:"panier MÉLI-MÉLO",
+  price:"20",
+  category: pork_category,
+  content:"4 tranches de jambon,4 échines de porc, 4 filets mignons "
+  )
+Option.create!(
   name:"panier FAMILLE",
   price:"25",
   category: pork_category,
   content:"6 tranches de jambon,4 échines de porc "
   )
-Option.create!(
-  name:"panier MÉLI-MÉLO",
-  price:"20",
-  category: pork_category,
-  content:"4 tranches de jambon,4 échines de porc, 4 filets mignons ")
 
 Option.create!(
   name:"panier DUO",
@@ -334,16 +336,16 @@ Option.create!(
   content:"1 côte de boeuf, 2 tournedos"
   )
 Option.create!(
-  name:"panier FAMILLE",
-  price:"50",
-  category: beef_category,
-  content:"1 côtes de boeuf, 5 tournedos, 2 entrecôtes"
-  )
-Option.create!(
   name:"panier MÉLI-MÉLO",
   price:"40",
   category: beef_category,
   content:"1 côte de boeuf, 3 tournedos, 2 entrecôtes"
+  )
+Option.create!(
+  name:"panier FAMILLE",
+  price:"50",
+  category: beef_category,
+  content:"1 côtes de boeuf, 5 tournedos, 2 entrecôtes"
   )
 
 gift1 = Gift.create!(
