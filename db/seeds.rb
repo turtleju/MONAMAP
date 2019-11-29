@@ -345,20 +345,26 @@ Option.create!(
 
 gift1 = Gift.create!(
   date: "03/12/2019",
-  option_id: Option.all.sample.id,
+  option_id: Option.where(category: Category.last).sample.id,
   giver_id: user2.id
   )
 
 gift2 = Gift.create!(
   date: "03/12/2019",
-  option_id: Option.all.sample.id,
+  option_id: Option.where(category: Category.first).sample.id,
   giver_id: user3.id
   )
 
 gift3 = Gift.create!(
   date: "03/12/2019",
-  option_id: Option.all.sample.id,
+  option_id: Option.where(category: Category.fourth).sample.id,
   giver_id: user4.id
+  )
+
+gift4 = Gift.create!(
+  date: "03/12/2019",
+  option_id: Option.where(category: Category.second).sample.id,
+  giver_id: user1.id
   )
 
 Subscription.create!(
