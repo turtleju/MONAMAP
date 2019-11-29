@@ -18,8 +18,8 @@ distribution = Distribution.create!(
   )
 
 vegetables_producer = Producer.create!(
-  first_name: "David",
-  last_name: "MABELLETOMATE",
+  first_name: "Paul",
+  last_name: "Dujardin",
   description: "Des légumes en biodynamie depuis 2015",
   address: "126, rue du Pontet 69250 Curis au Mont d'Or",
   latitude: 45.8723949,
