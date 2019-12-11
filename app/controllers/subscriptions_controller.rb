@@ -46,7 +46,7 @@ class SubscriptionsController < ApplicationController
       line_items: [
        #options.each
       {
-        name: "Paiement de votre aboonement",
+        name: "Paiement de votre abonnement pour le 1er mois",
         # images: [teddy.photo_url],
         amount: @subscription.price_cents,
         currency: 'eur',
