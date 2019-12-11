@@ -1,6 +1,7 @@
 class AmapiensController < ApplicationController
   def show
-    @gifts = Gift.where('date > ?', DateTime.current)
+    # @gifts = Gift.where('date > ?', DateTime.current)
+    @gifts = Gift.all
   end
 
   def create
